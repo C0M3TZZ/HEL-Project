@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hel - Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel">
+        <div class="rover" data-mission="off">
+            <!-- headdir ใช้เพื่อหาทิศทางของRover ตอนยังไม่มีรูป -->
+            <div class="headdir"></div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="scorePanel"></div>
+        <div class="commandPanel"></div>
+      </div>
+      <div class="movesetbar">
+        <div class="moveset">
+          <div class="forward" onclick="addComand('forward')">F</div>
+          <div class="backward" onclick="addComand('backward')">B</div>
+          <div class="turnleft" onclick="addComand('left')">L</div>
+          <div class="turnright" onclick="addComand('right')">R</div>
+        </div>
+        <div class="btn_moveset">
+          <div class="btnSend" onclick="sendCommands()">Send</div>
+        </div>
+        <div class="statusPanel"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

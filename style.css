@@ -1,0 +1,153 @@
+body{
+    margin: 0;
+}
+
+.container{ /* Container */
+    width: 100vw;
+    height: 100vh;
+}
+
+.panel{ /* หน้าจอหลักของเกม */
+    width: 75%;
+    height: 75%;
+    background-color: pink;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.rover{ /* หุ่นยนต์ */
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s;
+}
+
+.toolbar{ /* แถบแนวตั้ง */
+    width: 25%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.movesetbar{ /* แถบแนวนอน */
+    width: 75%;
+    height: 25%;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.moveset{ /* ปุ่มกดคำสั่ง */
+    height: 100%;
+    width: 60%;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.forward{ /* ปุ่มกดคำสั่ง-เดินหน้า */
+    width: 10rem;
+    height: 10rem;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.backward{ /* ปุ่มกดคำสั่ง-ถอยหลัง */
+    width: 10rem;
+    height: 10rem;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.turnleft{ /* ปุ่มกดคำสั่ง-หมุนซ้าย */
+    width: 10rem;
+    height: 10rem;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.turnright{ /* ปุ่มกดคำสั่ง-หมุนขวา */
+    width: 10rem;
+    height: 10rem;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.btn_moveset{ /* ปุ่มกดคำสั่ง-กดปุ่มSend */
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headdir{ /* [DEV] ที่บอกทิศของหุ่น */
+    width: 5%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btnSend{ /* ปุ่มกดคำสั่ง-กดปุ่มSend */
+    width: 90%;
+    height: 90%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cmdItems{ /* กล่องคำสั่ง-อันเล็ก */
+    width: 90%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    margin: 5%;
+}
+
+.statusPanel{ /* กล่องสถานะ */
+    width: 20%;
+    height: 100%;
+    background-color: lemonchiffon;
+}
+
+.scorePanel{ /* กล่องคะแนน */
+    width: 100%;
+    height: 25%;
+    background-color: yellow;
+}
+
+.commandPanel{ /* กล่องคำสั่ง */
+    width: 100%;
+    height: 75%;
+    background-color: green;
+    overflow: scroll;
+}
