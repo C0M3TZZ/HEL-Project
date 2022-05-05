@@ -1,10 +1,97 @@
 let commandsPanel = document.querySelector(".commandPanel");
-let rover = document.querySelector(".rover");
-let roverX = 0;
-let roverY = 0;
-let roverDirection = "N";
-let roverRotage = 0;
-function moveRover(direction) { //ใช้สำหรับขยับหุ่นจากด้านหน้าหรือด้านหลัง
+let panel = document.querySelector(".panel");
+let statusUI = {
+  posX: document.getElementById("posX"),
+  posY: document.getElementById("posY"),
+  energys: document.getElementById("energy"),
+}
+let rover = {
+  element: document.querySelector(".rover"),
+  x: 0,
+  y: 0,
+  direction: "N",
+  rotage: 0,
+};
+let enegryValue = 140;
+let enegry = {
+  add: (value) => {
+    enegryValue += value;
+    if (enegryValue > 140) {
+      enegryValue = 140;
+    }
+    statusUI.energys.innerHTML = `Energy : ${enegryValue}`;
+  },
+  sub: (value) => {
+    enegryValue -= value;
+    if (enegryValue < 0) {
+      enegryValue = 0;
+    }
+    statusUI.energys.innerHTML = `Energy : ${enegryValue}`;
+  }
+};
+let eventArray = [{
+  name: "หินรูปกบ",
+  desc: `It shows a larger rock towards the bottom left of the frame, part of Perseverance visible towards the right, and the eerie Martian sky in the background. The most important thing was the 'ladder' between the boulder and Perseverance. Although technically this isn't a ladder, it does look like a ladder.
+  These rocks have positioned themselves upwards as if helping someone traverse the surface of the Red Planet. The details on this 'ladder of Mars' are just as interesting. We can clearly see the rough texture on the sides, orange dust covering the top, and smaller rocks resting on top.
+  Martian Rocks Have Many Interesting Shapes
+  This is not the first time Perseverance has found similar objects on Planet Earth hidden behind the rocks of Mars. In late October, Perseverance found a rock that looked like a giant frog.
+  Another photo from earlier in the year shows a rock that resembles a Martian worm. Most of the rocks on Mars are shaped like ordinary rocks, but on occasion, Perseverance finds rocks that are very unique in shape.
+  Images like these are what make robots like Perseverance so important. Anyone reading this article is highly unlikely to set foot on Mars in their lifetime. That fact may be disappointing to some, but these photos help a little.
+  We can sit back on Earth, not worry about the harsh reality of actually being on Mars, and still experience the planet as if we were there.`,
+  imgPath: "./images/frog-like.jpg",
+  posX: Math.floor(Math.random() * 15),
+  posY: Math.floor(Math.random() * 7),
+  type: 'good',
+}, {
+  name: "Kuy Q Yai Lek",
+  posX: Math.floor(Math.random() * 15),
+  posY: Math.floor(Math.random() * 7),
+  type: 'bad',
+  exec: () => {
+    sendCommands(['backward', 'backward', 'backward'], true);
+  }
+}];
+
+for (let index = 0; index < eventArray.length; index++) {
+  const element = eventArray[index];
+  let eventElement = document.createElement("div");
+  eventElement.classList.add("eventShadow");
+  eventElement.style.top = element.posY + "0vh";
+  eventElement.style.left = element.posX + "0vh";
+  element.ele = eventElement;
+  panel.appendChild(eventElement);
+}
+
+function checkEvent() {
+  let getEvent = eventArray.find(x => x.posX == rover.x && x.posY == rover.y);
+  if (getEvent) {
+    if (getEvent.type == 'good') {
+      toggleModal(getEvent);
+    }
+    if (getEvent.type == 'bad') {
+      getEvent.exec();
+    }
+    getEvent.ele.remove();
+  }
+}
+
+let toggleModal = (even) => {
+  let modal = document.querySelector(".modal");
+  let modal_title = document.querySelector(".modal_title");
+  let modal_desc = document.querySelector(".modal_desc");
+  let modalImg = document.getElementById("modal_pic_img");
+  modalImg.src = even.imgPath;
+  modal_title.innerHTML = even.name;
+  modal_desc.innerHTML = even.desc;
+  modal.classList.remove("hide");
+}
+
+let closeModal = () => {
+  let modal = document.querySelector(".modal");
+  modal.classList.add("hide");
+}
+
+async function moveRover(direction) { //ใช้สำหรับขยับหุ่นจากด้านหน้าหรือด้านหลัง
   let move = 1;
   switch (direction) {
     case "forward":
@@ -17,70 +104,72 @@ function moveRover(direction) { //ใช้สำหรับขยับหุ�
       break;
   }
 
-  switch (roverDirection) {
+  switch (rover.direction) {
     case "N":
-      roverX += move;
+      rover.x += move;
       break;
     case "E":
-      roverY += move;
+      rover.y += move;
       break;
     case "S":
-      roverX -= move;
+      rover.x -= move;
       break;
     case "W":
-      roverY -= move;
+      rover.y -= move;
       break;
     default:
       break;
   }
-  rover.style.top = roverY + "0vh";
-  rover.style.left = roverX + "0vh";
+  rover.element.style.top = rover.y + "0vh";
+  rover.element.style.left = rover.x + "0vh";
+  statusUI.posX.innerHTML = `X : ${rover.x}`;
+  statusUI.posY.innerHTML = `Y : ${rover.y}`;
 }
 
 function rotageRover(direction) { //ใช้สำหรับหมุนหุ่น
   switch (direction) {
     case "L":
-      switch (roverDirection) {
+      switch (rover.direction) {
         case "N":
-          roverDirection = "W";
+          rover.direction = "W";
           break;
         case "E":
-          roverDirection = "N";
+          rover.direction = "N";
           break;
         case "S":
-          roverDirection = "E";
+          rover.direction = "E";
           break;
         case "W":
-          roverDirection = "S";
+          rover.direction = "S";
           break;
         default:
           break;
       }
-      roverRotage -= 90;
+      rover.rotage -= 90;
       break;
     case "R":
-      switch (roverDirection) {
+      switch (rover.direction) {
         case "N":
-          roverDirection = "E";
+          rover.direction = "E";
           break;
         case "E":
-          roverDirection = "S";
+          rover.direction = "S";
           break;
         case "S":
-          roverDirection = "W";
+          rover.direction = "W";
           break;
         case "W":
-          roverDirection = "N";
+          rover.direction = "N";
           break;
         default:
           break;
       }
-      roverRotage += 90;
+      rover.rotage += 90;
       break;
     default:
       break;
   }
-  rover.style.transform = `rotate(${roverRotage}deg)`;
+  rover.element.style.transform = `rotate(${rover.rotage}deg)`;
 }
 
 function addComand(command) { //เพิ่มคำสั่งในกล่องคำสั่ง
@@ -102,15 +191,15 @@ function getCommands() { //ดึงคำสั่งทั้งหมดจ�
   return commands;
 }
 
-async function sendCommands() { //ส่งคำสั่งไปยังหุ่น
-  if (rover.dataset.mission == "on") { //ถ้าหุ่นกำลังทำงาน
+async function sendCommands(commands = getCommands(), bypass = false) { //ส่งคำสั่งไปยังหุ่น
+  if (rover.element.dataset.mission == "on") { //ถ้าหุ่นกำลังทำงาน
     return;
   }
-  let commands = getCommands();
   let commandMove = 0;
-  rover.dataset.mission = "on";
+  rover.element.dataset.mission = "on";
   setTimeout(() => { //ปรับให้หุ่นเป็นสถานะว่าง
-    rover.dataset.mission = "off";
+    rover.element.dataset.mission = "off";
+    checkEvent();
   }, commands.length * 1000);
   await commands.forEach((command) => { //สั่งหุ่นทำงาน
     setTimeout(() => {
@@ -129,6 +218,9 @@ async function sendCommands() { //ส่งคำสั่งไปยังห�
           break;
         default:
           break;
+      }
+      if (bypass == false) {
+        enegry.sub(1);
       }
     }, 1000 * commandMove);
     commandMove++;
