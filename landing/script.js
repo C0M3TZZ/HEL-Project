@@ -34,5 +34,5 @@ getAllFullPage.forEach((el) => {
         stars.style.left = value * 0.15 + 'px';
         sun.style.left = value * -0.2 + 'px';
         text.style.marginTop = value * 0.1 + 'px';
-        header.style.top = value * 0.5 + 'px';
+        // header.style.top = value * 0.5 + 'px';
     })
