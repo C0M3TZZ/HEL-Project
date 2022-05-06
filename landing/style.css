@@ -105,7 +105,6 @@ body {
   width: 100%;
   height: 140px;
   background: linear-gradient(to top, #1f1257, transparent);
-  z-index: 1;
 }
 
 .background img {
