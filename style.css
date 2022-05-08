@@ -54,7 +54,8 @@ body {
     width: 65%;
     height: 95%;
     font-size: 1.25rem;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .modal {
