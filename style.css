@@ -108,8 +108,8 @@ body {
 
 .rover {
     /* หุ่นยนต์ */
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     background-color: black;
     position: absolute;
     top: 0;
@@ -119,8 +119,8 @@ body {
 }
 
 .eventShadow{
-    width: 100px;
-    height: 100px;
+    width: 10vh;
+    height: 10vh;
     background-color: yellow;
     position: absolute;
     top: 0;
@@ -281,8 +281,8 @@ body {
     height: 10vh;
     background-color: yellow;
     position: absolute;
-    bottom: 26vh;
-    right: 26vw;
+    top: 25vh;
+    left: 25vw;
     z-index: 3;
     transition: all 0.5s;
 }
@@ -293,6 +293,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .alert_box .hide{
