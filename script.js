@@ -5,6 +5,22 @@ let alert_box = {
   content: document.querySelector(".alert_box_content"),
 };
 
+let menu = {
+  element: document.querySelector(".menu"),
+  mainmenu: document.querySelector(".mainmenu"),
+  inv: document.querySelector(".inv"),
+  inv_items: document.querySelector(".inv_items"),
+  inv_panel: document.querySelector(".inv_panel"),
+  btn: document.querySelector(".menu_btn"),
+}
+
+let menu_toggle = () => {
+  menu.element.classList.toggle("hide");
+  menu.inv.classList.add("close_inv");
+  menu.mainmenu.classList.remove("drawer_mainmenu");
+  testdrawer(false);
+}
+
 let statusUI = {
   posX: document.getElementById("posX"),
   posY: document.getElementById("posY"),
@@ -42,6 +58,15 @@ let enegry = {
   },
 };
 let eventArray = [
+  {
+    name: "TEST Subject",
+    desc: ``,
+    imgPath: "./images/frog-like.jpg",
+    posX: 1,
+    posY: 2,
+    type: "good",
+    isFinish: false,
+  },
   {
     name: "หินรูปกบ",
     desc: `It shows a larger rock towards the bottom left of the frame, part of Perseverance visible towards the right, and the eerie Martian sky in the background. The most important thing was the 'ladder' between the boulder and Perseverance. Although technically this isn't a ladder, it does look like a ladder.
@@ -266,4 +291,30 @@ async function sendCommands(commands = getCommands(), bypass = false) {
     }, 1000 * commandMove);
     commandMove++;
   });
+}
+
+let skip_game = () => {
+  window.location.replace("./landing");
+}
+
+let testdrawer = (open) => {
+  if(open){
+    menu.mainmenu.classList.add("drawer_mainmenu");
+    menu.inv.classList.remove("close_inv");
+    let mego = eventArray.filter(ele => ele.type === "good" && ele.isFinish);
+    console.log(mego)
+    mego.forEach(ele => {
+      let item = document.createElement("div");
+      item.classList.add("inv_items");
+      item.innerHTML = ele.name;
+      item.onclick = () => {
+        toggleModal(ele)
+      };
+      menu.inv_panel.appendChild(item);
+    });
+  }else{
+    menu.mainmenu.classList.remove("drawer_mainmenu");
+    menu.inv.classList.add("close_inv");
+    menu.inv_panel.innerHTML = null;
+  }
 }

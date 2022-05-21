@@ -10,6 +10,23 @@
 
   <body>
     <div class="container">
+      <div class="menu_btn" onclick="menu_toggle()">
+      </div>
+      <div class="menu hide">
+        <div class="focus" onclick="menu_toggle()"></div>
+        <div class="menu_panel">
+          <div class="mainmenu">
+            <div class="restart"></div>
+            <div class="items" onclick="testdrawer(true)"></div>
+            <div class="skip" onclick="skip_game()"></div>
+          </div>
+          <div class="inv close_inv">
+            <div class="close_draw" onclick="testdrawer(false)"></div>
+            <div class="inv_panel">
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="alert_box hide">
         <div class="alert_box_content">ชิบหาย ลมแรง</div>
       </div>
