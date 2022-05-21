@@ -5,6 +5,11 @@ let alert_box = {
   content: document.querySelector(".alert_box_content"),
 };
 
+let gameover = document.querySelector(".gameover");
+let trigger_gameover = () => {
+  gameover.classList.remove("hide");
+}
+
 let menu = {
   element: document.querySelector(".menu"),
   mainmenu: document.querySelector(".mainmenu"),
@@ -18,7 +23,7 @@ let menu_toggle = () => {
   menu.element.classList.toggle("hide");
   menu.inv.classList.add("close_inv");
   menu.mainmenu.classList.remove("drawer_mainmenu");
-  testdrawer(false);
+  load_Inv(false);
 }
 
 let statusUI = {
@@ -180,7 +185,7 @@ async function moveRover(direction) {
   statusUI.posX.innerHTML = `X : ${rover.x}`;
   statusUI.posY.innerHTML = `Y : ${rover.y}`;
   if (rover.y > panelRes.height || rover.y < 0 || rover.x > panelRes.width || rover.x < 0) {
-    trigger_alert_box("หุ่นของคุณอยู่ในพื้นที่ไม่สามารถเดินไปที่ตำแหน่งนี้ได้", 2000);
+    trigger_gameover();
     return;
   }
 }
@@ -297,7 +302,7 @@ let skip_game = () => {
   window.location.replace("./landing");
 }
 
-let testdrawer = (open) => {
+let load_Inv = (open) => {
   if(open){
     menu.mainmenu.classList.add("drawer_mainmenu");
     menu.inv.classList.remove("close_inv");

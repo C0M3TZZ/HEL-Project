@@ -10,18 +10,25 @@
 
   <body>
     <div class="container">
+      <div class="gameover hide">
+        <div class="gameoverContent">
+          <h1>Game Over</h1>
+          <div class="restart_go" onclick="window.location.reload()"></div>
+          <div class="skip_go" onclick="skip_game()"></div>
+        </div>
+      </div>
       <div class="menu_btn" onclick="menu_toggle()">
       </div>
       <div class="menu hide">
         <div class="focus" onclick="menu_toggle()"></div>
         <div class="menu_panel">
           <div class="mainmenu">
-            <div class="restart"></div>
-            <div class="items" onclick="testdrawer(true)"></div>
+            <div class="restart" onclick="window.location.reload()"></div>
+            <div class="items" onclick="load_Inv(true)"></div>
             <div class="skip" onclick="skip_game()"></div>
           </div>
           <div class="inv close_inv">
-            <div class="close_draw" onclick="testdrawer(false)"></div>
+            <div class="close_draw" onclick="load_Inv(false)"></div>
             <div class="inv_panel">
             </div>
           </div>

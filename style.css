@@ -418,6 +418,36 @@ body {
     justify-content: center;
 }
 
+.gameover{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 20;
+    color: white;
+    transition: all 0.5s;
+}
 
+.restart_go{
+    width: 20%;
+    height: 20%;
+    background-color: red;
+}
 
+.skip_go{
+    width: 20%;
+    height: 20%;
+    background-color: green;
+}
 
+.gameoverContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
