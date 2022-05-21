@@ -339,7 +339,7 @@ body {
     background-color: whitesmoke;
     z-index: 2;
     overflow: hidden;
-    border-radius: 50px;
+    border-radius: 2.5vw;
 }
 
 .mainmenu{

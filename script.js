@@ -292,6 +292,10 @@ async function sendCommands(commands = getCommands(), bypass = false) {
       }
       if (bypass == false) {
         enegry.sub(1);
+        if (enegryValue <= 0) {
+          trigger_gameover();
+          return;
+        }
       }
     }, 1000 * commandMove);
     commandMove++;
@@ -299,7 +303,7 @@ async function sendCommands(commands = getCommands(), bypass = false) {
 }
 
 let skip_game = () => {
-  window.location.replace("./landing");
+  window.location.assign("./landing");
 }
 
 let load_Inv = (open) => {
@@ -307,7 +311,6 @@ let load_Inv = (open) => {
     menu.mainmenu.classList.add("drawer_mainmenu");
     menu.inv.classList.remove("close_inv");
     let mego = eventArray.filter(ele => ele.type === "good" && ele.isFinish);
-    console.log(mego)
     mego.forEach(ele => {
       let item = document.createElement("div");
       item.classList.add("inv_items");
