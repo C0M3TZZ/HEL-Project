@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hel - Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hel - Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="container">
-    <div class="modal hide">
-      <div class="modal_content">
-        <div class="modal_close" onclick="closeModal()">X</div>
-        <div class="layout">
-          <div class="modal_pic">
-            <img id="modal_pic_img" src="images/sa.png" alt="" />
-          </div>
-          <div class="modal_context">
-            <h1 class="modal_title">TEST</h1>
-            <div class="modal_desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  <body>
+    <div class="container">
+      <div class="alert_box hide">
+        <div class="alert_box_content">ชิบหาย ลมแรง</div>
+      </div>
+      <div class="modal hide">
+        <div class="modal_content">
+          <div class="modal_close" onclick="closeModal()">X</div>
+          <div class="layout">
+            <div class="modal_pic">
+              <img id="modal_pic_img" src="images/sa.png" alt="" />
+            </div>
+            <div class="modal_context">
+              <h1 class="modal_title">TEST</h1>
+              <div class="modal_desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
+                amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit.
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="panel">
-      <div class="rover" data-mission="off">
-        <!-- headdir ใช้เพื่อหาทิศทางของRover ตอนยังไม่มีรูป -->
-        <div class="headdir"></div>
+      <div class="panel">
+        <div class="rover" data-mission="off">
+          <!-- headdir ใช้เพื่อหาทิศทางของRover ตอนยังไม่มีรูป -->
+          <div class="headdir"></div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <div class="scorePanel"></div>
+        <div class="commandPanel"></div>
+      </div>
+      <div class="movesetbar">
+        <div class="moveset">
+          <div class="turnleft fontBiggerplz" onclick="addComand('left')">
+            ⬅️
+          </div>
+          <div class="forward fontBiggerplz" onclick="addComand('forward')">
+            ⬆️
+          </div>
+          <div class="backward fontBiggerplz" onclick="addComand('backward')">
+            ⬇️
+          </div>
+          <div class="turnright fontBiggerplz" onclick="addComand('right')">
+            ➡️
+          </div>
+        </div>
+        <div class="btn_moveset">
+          <div class="btnSend fontBiggerplz" onclick="sendCommands()">📡</div>
+        </div>
+        <div class="statusPanel">
+          <h1>Status</h1>
+          <p id="posX">X : 0</p>
+          <p id="posY">Y : 0</p>
+          <p id="energy">Energy : 140</p>
+        </div>
       </div>
     </div>
-    <div class="toolbar">
-      <div class="scorePanel"></div>
-      <div class="commandPanel"></div>
-    </div>
-    <div class="movesetbar">
-      <div class="moveset">
-        <div class="turnleft fontBiggerplz" onclick="addComand('left')">⬅️</div>
-        <div class="forward fontBiggerplz" onclick="addComand('forward')">⬆️</div>
-        <div class="backward fontBiggerplz" onclick="addComand('backward')">⬇️</div>
-        <div class="turnright fontBiggerplz" onclick="addComand('right')">➡️</div>
-      </div>
-      <div class="btn_moveset">
-        <div class="btnSend fontBiggerplz" onclick="sendCommands()">📡</div>
-      </div>
-      <div class="statusPanel">
-        <h1>Status</h1>
-        <p id="posX">X : 0</p>
-        <p id="posY">Y : 0</p>
-        <p id="energy">Energy : 140</p>
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

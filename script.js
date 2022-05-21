@@ -1,5 +1,9 @@
 let commandsPanel = document.querySelector(".commandPanel");
 let panel = document.querySelector(".panel");
+let alert_box = {
+  element : document.querySelector(".alert_box"),
+  content: document.querySelector(".alert_box_content"),
+}
 let statusUI = {
   posX: document.getElementById("posX"),
   posY: document.getElementById("posY"),
@@ -39,14 +43,16 @@ let eventArray = [{
   Images like these are what make robots like Perseverance so important. Anyone reading this article is highly unlikely to set foot on Mars in their lifetime. That fact may be disappointing to some, but these photos help a little.
   We can sit back on Earth, not worry about the harsh reality of actually being on Mars, and still experience the planet as if we were there.`,
   imgPath: "./images/frog-like.jpg",
-  posX: Math.floor(Math.random() * 15),
-  posY: Math.floor(Math.random() * 7),
+  posX: 0,
+  posY: 2,
   type: 'good',
+  isFinish: false,
 }, {
   name: "Kuy Q Yai Lek",
-  posX: Math.floor(Math.random() * 15),
-  posY: Math.floor(Math.random() * 7),
+  posX: 2,
+  posY: 0,
   type: 'bad',
+  isFinish: false,
   exec: () => {
     sendCommands(['backward', 'backward', 'backward'], true);
   }
@@ -62,14 +68,26 @@ for (let index = 0; index < eventArray.length; index++) {
   panel.appendChild(eventElement);
 }
 
+let trigger_alert_box = (text,timeout) => {
+  alert_box.element.classList.remove("hide");
+  console.log(alert_box.content)
+  alert_box.content.innerHTML = text;
+  setTimeout(() => {
+    alert_box.element.classList.add("hide");
+  },timeout);
+}
+
 function checkEvent() {
   let getEvent = eventArray.find(x => x.posX == rover.x && x.posY == rover.y);
   if (getEvent) {
-    if (getEvent.type == 'good') {
+    if (getEvent.type == 'good' && !getEvent.isFinish) {
       toggleModal(getEvent);
+      getEvent.isFinish = true;
     }
-    if (getEvent.type == 'bad') {
+    if (getEvent.type == 'bad' && !getEvent.isFinish) {
+      trigger_alert_box(getEvent.name, 2000);
       getEvent.exec();
+      getEvent.isFinish = true;
     }
     getEvent.ele.remove();
   }
