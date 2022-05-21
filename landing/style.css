@@ -149,8 +149,12 @@ body {
 .rocket {
   position: fixed;
   top: 10%;
-  left: 50%;
+  left: 48%;
   transition: all 0.5s;
+}
+
+.rocket img {
+  width: 120px;
 }
 
 .rocket[data-status="intro"] {
