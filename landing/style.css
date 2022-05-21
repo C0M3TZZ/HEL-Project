@@ -278,29 +278,50 @@ body {
 .t_r,
 .t_l,
 .c_r {
-  z-index: 4;
+  z-index: 5;
 }
 
 .c_l {
-  z-index: 3;
+  z-index: 4;
 }
 
 .body {
-  z-index: 2;
+  z-index: 3;
 }
 
 .head {
-  z-index: 1;
+  z-index: 2;
 }
 
 .rocketPage {
   background: linear-gradient(180deg, #1f1257, #191044, #0b071d);
-  /* background: rgb(255, 253, 244); */
-  /* background: linear-gradient(180deg, #1f1257, #130d30, #080514); */
 }
 
-/* .rocketPage .step6 img#mars {
+.rocketPage .step6 {
+  position: relative;
+}
+
+.step6::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(to top, #ae6b50, transparent);
+  z-index: 1;
+}
+
+.rocketPage .step6 img#mars {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-} */
+}
+
+.backgroundLatterPage {
+  background: linear-gradient(180deg, #ae6b50, #723b26, #0a0400);
+}
+
+.endCredit {
+  background: #0a0400;
+}
