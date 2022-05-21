@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hel - Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="container">
-    <div class="modal hide">
-      <div class="modal_content">
-        <div class="modal_close" onclick="closeModal()">X</div>
-        <div class="layout">
-          <div class="modal_pic">
-            <img id="modal_pic_img" src="images/sa.png" alt="" />
-          </div>
-          <div class="modal_context">
-            <h1 class="modal_title">TEST</h1>
-            <div class="modal_desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hel - landing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="intro fullpage event-triger">
+      <nav class="navbar">
+        <h1 class="logo">IT.KMITL</a></h1>
+        <div class="menu">
+          <ul>
+              <li><a href="#" class="active">HOME</a></li>
+              <li><a href="#">ABOUT</a></li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="rover" data-mission="off">
-        <!-- headdir ใช้เพื่อหาทิศทางของRover ตอนยังไม่มีรูป -->
-        <div class="headdir"></div>
-      </div>
-    </div>
-    <div class="toolbar">
-      <div class="scorePanel"></div>
-      <div class="commandPanel"></div>
-    </div>
-    <div class="movesetbar">
-      <div class="moveset">
-        <div class="turnleft fontBiggerplz" onclick="addComand('left')">⬅️</div>
-        <div class="forward fontBiggerplz" onclick="addComand('forward')">⬆️</div>
-        <div class="backward fontBiggerplz" onclick="addComand('backward')">⬇️</div>
-        <div class="turnright fontBiggerplz" onclick="addComand('right')">➡️</div>
-      </div>
-      <div class="btn_moveset">
-        <div class="btnSend fontBiggerplz" onclick="sendCommands()">📡</div>
-      </div>
-      <div class="statusPanel">
-        <h1>Status</h1>
-        <p id="posX">X : 0</p>
-        <p id="posY">Y : 0</p>
-        <p id="energy">Energy : 140</p>
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+      </nav>
 
+      <div class="background">
+        <img src="./images/stars.png" id="stars">
+        <img src="./images/sun.png" id="sun">
+        <div class="containerText">
+          <!-- <p id="subtext">FLY TO THE</p> -->
+          <p id="text">MARS</p>
+        </div>
+        <img src="./images/earth.png" id="earth">
+      </div>
+    </section>
+
+    <div class="rocket" data-status="intro">
+      <div class="t_r rocketPart">
+        <img src="./images/thuster_r.png" alt="" srcset="">
+      </div>
+      <div class="t_l rocketPart">
+        <img src="./images/thuster_l.png" alt="" srcset="">
+      </div>
+      <div class="c_r rocketPart">
+        <img src="./images/ch_r.png" alt="" srcset="">
+      </div>
+      <div class="c_l rocketPart">
+        <img src="./images/ch_l.png" alt="" srcset="">
+      </div>
+      <div class="body rocketPart">
+        <img src="./images/body.png" alt="" srcset="">
+      </div>
+      <div class="head rocketPart">
+        <img src="./images/head.png" alt="" srcset="">
+      </div>
+    </div>
+
+    <div class="rocketPage">
+      <section class="inspecRocket fullpage event-triger"></section>
+      <section class="step1 fullpage event-triger"></section>
+      <section class="step2 fullpage event-triger"></section>
+      <section class="step3 fullpage event-triger"></section>
+      <section class="step4 fullpage event-triger"></section>
+      <section class="step5 fullpage event-triger"></section>
+      <section class="inspecRover fullpage event-triger"></section>
+      <section class="step6 fullpage event-triger">
+          <img src="./images/mars.png" id="mars">
+      </section>
+    </div>
+
+    <div class="backgroundLatterPage">
+      <section class="step7 fullpage event-triger"></section>
+      <section class="step8 fullpage event-triger"></section>
+      <section class="step9 fullpage event-triger"></section>
+    </div>
+
+    <section class="endCredit fullpage"></section>
+    <script src="script.js"></script>
+  </body>
 </html>

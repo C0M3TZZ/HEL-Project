@@ -1,278 +1,337 @@
-@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/*  font-family: 'Prompt', sans-serif;
+    font-family: "Mitr", sans-serif;
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Monoton', cursive;
+*/
 
 body {
-    margin: 0;
-    font-family: 'Mitr', sans-serif;
+  margin: 0;
+  font-family: "Mitr", sans-serif;
+  scroll-behavior: smooth;
 }
 
-.container {
-    /* Container */
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+.fullpage {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.layout {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+.intro {
+  background: linear-gradient(150deg, #080808 10%, #1f1257, #1e2364);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.modal_pic {
-    width: 40%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 10px 0 0 10px;
+.navbar {
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
 }
 
-.hide {
-    opacity: 0;
-    visibility: hidden;
+.icon {
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: 10px;
+  margin-top: 20px;
 }
 
-.modal_pic img {
-    height: 100%;
+.logo {
+  font-size: 26px;
+  letter-spacing: 12px;
+  float: left;
+  margin-left: 50px;
+  margin-top: 30px;
+  text-decoration: none;
 }
 
-.modal_context {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+.menu ul {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.modal_title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+.menu ul li {
+  list-style: none;
+  margin-right: 50px;
+  margin-top: 10px;
+  font-size: 18px;
+  letter-spacing: 3px;
 }
 
-.modal_desc {
-    width: 65%;
-    height: 95%;
-    font-size: 1.25rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.4s ease-in-out;
+  border-radius: 20px;
+  padding: 6px 15px;
 }
 
-.modal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.menu ul li a:hover {
+  color: #fff;
+  background-color: #c211a1;
 }
 
-.modal_content {
-    width: 70vw;
-    height: 80vh;
-    background-color: #fff;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.modal_close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3rem;
-    height: 3rem;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.background::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(to top, #1f1257, transparent);
+  z-index: 1;
 }
 
-.panel {
-    /* หน้าจอหลักของเกม */
-    width: 75vw;
-    height: 75vh;
-    background-color: pink;
-    position: relative;
-    top: 0;
-    left: 0;
-    overflow: hidden;
+.background img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-.rover {
-    /* หุ่นยนต์ */
-    width: 100px;
-    height: 100px;
-    background-color: black;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all 1s;
-    z-index: 2;
+.background img#sun,
+img#stars {
+  mix-blend-mode: screen;
 }
 
-.eventShadow{
-    width: 100px;
-    height: 100px;
-    background-color: yellow;
-    position: absolute;
-    top: 0;
-    left: 0;
+.containerText {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  flex-direction: row;
+  margin-top: 10%;
+  color: #fff;
+  font-family: "Heebo", sans-serif;
 }
 
-.toolbar {
-    /* แถบแนวตั้ง */
-    width: 25vw;
-    height: 100vh;
-    background-color: red;
-    position: absolute;
-    top: 0;
-    right: 0;
+/* #subtext {
+  font-family: "Mitr", sans-serif;
+  font-size: 100px;
+  font-weight: 900;
+  letter-spacing: 30px;
+  margin: 0%;
+  margin-left: 20px;
+} */
+
+#text {
+  font-size: 300px;
+  font-weight: 900;
+  margin: 0%;
+  margin-top: 8%;
 }
 
-.movesetbar {
-    /* แถบแนวนอน */
-    width: 75vw;
-    height: 25vh;
-    background-color: blue;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
+.rocket {
+  position: fixed;
+  top: 10%;
+  left: 48%;
+  transition: all 0.5s;
+  z-index: 2;
 }
 
-.fontBiggerplz{
-    font-size: 2rem;
+.rocket img {
+  width: 120px;
 }
 
-.moveset {
-    /* ปุ่มกดคำสั่ง */
-    height: 100%;
-    width: 60%;
-    background-color: aquamarine;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.rocket[data-status="intro"] {
+  top: 0%;
+  opacity: 0;
 }
 
-.forward {
-    /* ปุ่มกดคำสั่ง-เดินหน้า */
-    width: 10rem;
-    height: 10rem;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
+.rocket[data-status="inspecRocket"] {
+  opacity: 1;
+  top: 10%;
+  transition: all 0.5s;
 }
 
-.backward {
-    /* ปุ่มกดคำสั่ง-ถอยหลัง */
-    width: 10rem;
-    height: 10rem;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
+.t_r,
+.c_r {
+  transform-origin: top right;
 }
 
-.turnleft {
-    /* ปุ่มกดคำสั่ง-หมุนซ้าย */
-    width: 10rem;
-    height: 10rem;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
+.t_l,
+.c_l {
+  transform-origin: top left;
 }
 
-.turnright {
-    /* ปุ่มกดคำสั่ง-หมุนขวา */
-    width: 10rem;
-    height: 10rem;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
+.rocket[data-status="step1"] .t_r,
+.rocket[data-status="step2"] .t_r,
+.rocket[data-status="step3"] .t_r,
+.rocket[data-status="step4"] .t_r,
+.rocket[data-status="step5"] .t_r,
+.rocket[data-status="inspecRover"] .t_r,
+.rocket[data-status="step6"] .t_r,
+.rocket[data-status="step7"] .t_r,
+.rocket[data-status="step8"] .t_r,
+.rocket[data-status="step9"] .t_r,
+.rocket[data-status="endcredit"] .t_r {
+  transform: translate(30%, -50%) rotate(-45deg);
+  opacity: 0;
 }
 
-.btn_moveset {
-    /* ปุ่มกดคำสั่ง-กดปุ่มSend */
-    width: 20%;
-    height: 100%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.rocket[data-status="step1"] .t_l,
+.rocket[data-status="step2"] .t_l,
+.rocket[data-status="step3"] .t_l,
+.rocket[data-status="step4"] .t_l,
+.rocket[data-status="step5"] .t_l,
+.rocket[data-status="inspecRover"] .t_l,
+.rocket[data-status="step6"] .t_l,
+.rocket[data-status="step7"] .t_l,
+.rocket[data-status="step8"] .t_l,
+.rocket[data-status="step9"] .t_l,
+.rocket[data-status="endcredit"] .t_l {
+  transform: translate(-30%, -50%) rotate(45deg);
+  opacity: 0;
 }
 
-.headdir {
-    /* [DEV] ที่บอกทิศของหุ่น */
-    width: 5%;
-    height: 100%;
-    background-color: red;
-    position: absolute;
-    top: 0;
-    right: 0;
+.rocket[data-status="step2"] .c_r,
+.rocket[data-status="step3"] .c_r,
+.rocket[data-status="step4"] .c_r,
+.rocket[data-status="step5"] .c_r,
+.rocket[data-status="inspecRover"] .c_r,
+.rocket[data-status="step6"] .c_r,
+.rocket[data-status="step7"] .c_r,
+.rocket[data-status="step8"] .c_r,
+.rocket[data-status="step9"] .c_r,
+.rocket[data-status="endcredit"] .c_r {
+  transform: translate(-30%, -50%) rotate(45deg);
+  opacity: 0;
 }
 
-.btnSend {
-    /* ปุ่มกดคำสั่ง-กดปุ่มSend */
-    width: 90%;
-    height: 90%;
-    background-color: gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.rocket[data-status="step2"] .c_l,
+.rocket[data-status="step3"] .c_l,
+.rocket[data-status="step4"] .c_l,
+.rocket[data-status="step5"] .c_l,
+.rocket[data-status="inspecRover"] .c_l,
+.rocket[data-status="step6"] .c_l,
+.rocket[data-status="step7"] .c_l,
+.rocket[data-status="step8"] .c_l,
+.rocket[data-status="step9"] .c_l,
+.rocket[data-status="endcredit"] .c_l {
+  transform: translate(30%, -50%) rotate(-45deg);
+  opacity: 0;
 }
 
-.cmdItems {
-    /* กล่องคำสั่ง-อันเล็ก */
-    width: 90%;
-    height: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aquamarine;
-    margin: 5%;
+.rocket[data-status="step3"] .body,
+.rocket[data-status="step4"] .body,
+.rocket[data-status="step5"] .body,
+.rocket[data-status="inspecRover"] .body,
+.rocket[data-status="step6"] .body,
+.rocket[data-status="step7"] .body,
+.rocket[data-status="step8"] .body,
+.rocket[data-status="step9"] .body,
+.rocket[data-status="endcredit"] .body {
+  transform: translate(0, -20%);
+  /* opacity: 0; */
 }
 
-.statusPanel {
-    /* กล่องสถานะ */
-    width: 20%;
-    height: 100%;
-    background-color: lemonchiffon;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.rocket[data-status="step4"] .body,
+.rocket[data-status="step5"] .body,
+.rocket[data-status="inspecRover"] .body,
+.rocket[data-status="step6"] .body,
+.rocket[data-status="step7"] .body,
+.rocket[data-status="step8"] .body,
+.rocket[data-status="step9"] .body,
+.rocket[data-status="endcredit"] .body {
+  transform: translate(0, -50%);
+  opacity: 0;
 }
 
-.scorePanel {
-    /* กล่องคะแนน */
-    width: 100%;
-    height: 25%;
-    background-color: yellow;
+.rocket[data-status="step4"] .head,
+.rocket[data-status="step5"] .head,
+.rocket[data-status="inspecRover"] .head,
+.rocket[data-status="step6"] .head,
+.rocket[data-status="step7"] .head,
+.rocket[data-status="step8"] .head,
+.rocket[data-status="step9"] .head,
+.rocket[data-status="endcredit"] .head {
+  transform: translate(0, -25%);
+  /* opacity: 0; */
 }
 
-.commandPanel {
-    /* กล่องคำสั่ง */
-    width: 100%;
-    height: 75%;
-    background-color: green;
-    overflow: scroll;
+.rocketPart {
+  position: absolute;
+  top: 0;
+  transition: all 0.5s;
 }
+
+.t_r,
+.t_l,
+.c_r {
+  z-index: 5;
+}
+
+.c_l {
+  z-index: 4;
+}
+
+.body {
+  z-index: 3;
+}
+
+.head {
+  z-index: 2;
+}
+
+.rocketPage {
+  background: linear-gradient(180deg, #1f1257, #191044, #0b071d);
+}
+
+.rocketPage .step6 {
+  position: relative;
+}
+
+.step6::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(to top, #ae6b50, transparent);
+  z-index: 1;
+}
+
+.rocketPage .step6 img#mars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+<<<<<<<< HEAD:style.css
+}
+
+.backgroundLatterPage {
+  background: linear-gradient(180deg, #ae6b50, #723b26, #0a0400);
+}
+
+.endCredit {
+  background: #0a0400;
+}
+========
+} */
+>>>>>>>> main:landing/style.css
