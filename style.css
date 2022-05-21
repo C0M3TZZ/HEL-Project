@@ -451,3 +451,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.clearMoveset{
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    background-color: lightcoral;
+}

@@ -323,3 +323,8 @@ let load_Inv = (open) => {
     menu.inv_panel.innerHTML = null;
   }
 }
+
+
+let clearMoveset = () => {
+  commandsPanel.innerHTML = null;
+}
