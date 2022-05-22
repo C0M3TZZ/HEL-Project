@@ -253,7 +253,7 @@ let eventArray = [
     isFinish: false,
     timeout: 5000,
     exec: () => {
-      sendCommands(["forward", "right", "forward"], true);
+      sendCommands(["forward", "forward", "forward", "backward", "backward", "backward", "backward"], true);
       enegry.sub(4);
     },
   },
