@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /*  font-family: 'Prompt', sans-serif;
     font-family: "Mitr", sans-serif;
@@ -53,7 +53,7 @@ body {
   letter-spacing: 12px;
   float: left;
   margin-left: 50px;
-  margin-top: 30px; 
+  margin-top: 30px;
   text-decoration: none;
 }
 
@@ -98,7 +98,7 @@ body {
 }
 
 .background::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -116,7 +116,8 @@ body {
   height: 100%;
 }
 
-.background img#sun, img#stars {
+.background img#sun,
+img#stars {
   mix-blend-mode: screen;
 }
 
@@ -125,9 +126,9 @@ body {
   height: 100vh;
   text-align: center;
   flex-direction: row;
-  margin-top: 10%;
+  margin-top: 6%;
   color: #fff;
-  font-family: 'Heebo', sans-serif; 
+  font-family: "Heebo", sans-serif;
 }
 
 /* #subtext {
@@ -140,7 +141,7 @@ body {
 } */
 
 #text {
-  font-size: 300px;
+  font-size: 1800%;
   font-weight: 900;
   margin: 0%;
   margin-top: 8%;
@@ -151,10 +152,12 @@ body {
   top: 10%;
   left: 48%;
   transition: all 0.5s;
+  z-index: 2;
 }
 
 .rocket img {
-  width: 120px;
+  width: 140px;
+  pointer-events: none;
 }
 
 .rocket[data-status="intro"] {
@@ -273,6 +276,92 @@ body {
   /* opacity: 0; */
 }
 
+.rocket[data-status="step5"] .head,
+.rocket[data-status="inspecRover"] .head,
+.rocket[data-status="step6"] .head,
+.rocket[data-status="step7"] .head,
+.rocket[data-status="step8"] .head,
+.rocket[data-status="step9"] .head,
+.rocket[data-status="endcredit"] .head {
+  transform: translate(0, -50%);
+  opacity: 0;
+}
+
+.rocket[data-status="step5"] .rocketHead,
+.rocket[data-status="inspecRover"] .rocketHead,
+.rocket[data-status="step6"] .rocketHead,
+.rocket[data-status="step7"] .rocketHead,
+.rocket[data-status="step8"] .rocketHead,
+.rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="endcredit"] .rocketHead {
+  transform: translate(0, -25%);
+  /* opacity: 0; */
+}
+
+.rocket[data-status="inspecRover"] .rocketHead,
+.rocket[data-status="step6"] .rocketHead,
+.rocket[data-status="step7"] .rocketHead,
+.rocket[data-status="step8"] .rocketHead,
+.rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="endcredit"] .rocketHead {
+  transform: translate(0, -60%) scale(2,2);
+}
+
+.rocket[data-status="inspecRocket"] .fire,
+.rocket[data-status="step1"] .fire,
+.rocket[data-status="step2"] .fire,
+.rocket[data-status="step3"] .fire,
+.rocket[data-status="step4"] .fire,
+.rocket[data-status="step5"] .fire {
+  opacity: 0;
+}
+.rocket[data-status="inspecRover"] .fire,
+.rocket[data-status="step7"] .fire,
+.rocket[data-status="step8"] .fire,
+.rocket[data-status="step9"] .fire,
+.rocket[data-status="endcredit"] .fire {
+  transform: translate(0, -60%) scale(2,2);
+  opacity: 0;
+}
+
+.rocket[data-status="step6"] .fire {
+  transform: translate(0, -60%) scale(2,2);
+}
+
+.rocket[data-status="inspecRocket"] .parachute,
+.rocket[data-status="step1"] .parachute,
+.rocket[data-status="step2"] .parachute,
+.rocket[data-status="step3"] .parachute,
+.rocket[data-status="step4"] .parachute,
+.rocket[data-status="step5"] .parachute,
+.rocket[data-status="inspecRover"] .parachute,
+.rocket[data-status="step6"] .parachute {
+  opacity: 0;
+}
+
+.rocket[data-status="step7"] .parachute,
+.rocket[data-status="step8"] .parachute,
+.rocket[data-status="step9"] .parachute {
+  transform: scale(3,3);
+}
+
+.rocket[data-status="step7"] .rocketHead,
+.rocket[data-status="step8"] .rocketHead,
+.rocket[data-status="step9"] .rocketHead {
+  transform: translate(0, -20%) scale(2,2);
+}
+
+.rocket[data-status="step8"] .rocketHead,
+.rocket[data-status="step9"] .rocketHead {
+  transform: translate(0, -60%) scale(2,2);
+}
+
+.rocket[data-status="step8"] .parachute,
+.rocket[data-status="step9"] .parachute {
+  transform: translate(0, -80%) scale(3,3);
+  opacity: 0;
+}
+
 .rocketPart {
   position: absolute;
   top: 0;
@@ -282,14 +371,19 @@ body {
 .t_r,
 .t_l,
 .c_r {
-  z-index: 5;
+  z-index: 6;
 }
 
 .c_l {
+  z-index: 5;
+}
+
+.body,
+.fire {
   z-index: 4;
 }
 
-.body {
+.rocketHead {
   z-index: 3;
 }
 
@@ -306,7 +400,7 @@ body {
 }
 
 .step6::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
