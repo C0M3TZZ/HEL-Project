@@ -106,59 +106,242 @@ let backpack = {
 
 let eventArray = [
   {
-    name: "TEST Subject",
-    desc: ``,
-    imgPath: "./images/frog-like.jpg",
-    deco: "half",
-    posX: 1,
-    posY: 2,
-    type: "good",
-    isFinish: false,
-    score: 10,
-    checkSpecial: null,
-    extraPoint: 0,
-  },
-  {
-    name: "TEST Upgrade",
-    desc: ``,
-    imgPath: "./images/frog-like.jpg",
+    name: "Microphone",
+    desc: `When the Perseverance rover arrives at Mars, it will have two microphones. It will make it possible for our robots to not only touch and taste, but finally hear, the sounds of Mars.NASA spacecraft that traveled to Mars in the past have carried microphones twice. Unfortunately, one of those missions, the Mars Polar Lander, failed. The Phoenix Lander had a microphone on the spacecraft’s descent camera, but that instrument was never turned on.`,
+    imgPath: "./images/micro.png",
     deco: "upgrade",
-    posX: 2,
-    posY: 2,
     type: "upgrade",
     isFinish: false,
-    itemId: "test",
-    score: 10,
+    itemId: "Microphone",
+    score: 200,
   },
   {
-    name: "หินรูปกบ",
-    desc: `It shows a larger rock towards the bottom left of the frame, part of Perseverance visible towards the right, and the eerie Martian sky in the background. The most important thing was the 'ladder' between the boulder and Perseverance. Although technically this isn't a ladder, it does look like a ladder.
-  These rocks have positioned themselves upwards as if helping someone traverse the surface of the Red Planet. The details on this 'ladder of Mars' are just as interesting. We can clearly see the rough texture on the sides, orange dust covering the top, and smaller rocks resting on top.
-  Martian Rocks Have Many Interesting Shapes
-  This is not the first time Perseverance has found similar objects on Planet Earth hidden behind the rocks of Mars. In late October, Perseverance found a rock that looked like a giant frog.
-  Another photo from earlier in the year shows a rock that resembles a Martian worm. Most of the rocks on Mars are shaped like ordinary rocks, but on occasion, Perseverance finds rocks that are very unique in shape.
-  Images like these are what make robots like Perseverance so important. Anyone reading this article is highly unlikely to set foot on Mars in their lifetime. That fact may be disappointing to some, but these photos help a little.
-  We can sit back on Earth, not worry about the harsh reality of actually being on Mars, and still experience the planet as if we were there.`,
-    imgPath: "./images/frog-like.jpg",
-    deco: "good",
-    posX: 0,
-    posY: 2,
-    type: "good",
+    name: "mast",
+    desc: `When the Perseverance rover arrives at Mars, it will have two microphones. It will make it possible for our robots to not only touch and taste, but finally hear, the sounds of Mars.NASA spacecraft that traveled to Mars in the past have carried microphones twice. Unfortunately, one of those missions, the Mars Polar Lander, failed. The Phoenix Lander had a microphone on the spacecraft’s descent camera, but that instrument was never turned on.`,
+    imgPath: "./images/mastcam.png",
+    deco: "upgrade",
+    type: "upgrade",
     isFinish: false,
-    score: 10,
-    checkSpecial: "test",
-    extraPoint: 100,
+    itemId: "mast",
+    score: 200,
   },
   {
-    name: "Kuy Q Yai Lek",
+    name: "Robotic Arm",
+    desc: `The 7-foot-long robotic arm on Perseverance can move a lot like yours. It has a shoulder, elbow and wrist "joints" for maximum flexibility. The arm lets the rover work as a human geologist would: by holding and using science tools with its "hand" or turret. The rover's own "hand tools" extract cores from rocks, takes microscopic images and analyzes the elemental composition and mineral makeup of Martian rocks and soil.`,
+    imgPath: "./images/reboarm.png",
+    deco: "upgrade",
+    type: "upgrade",
+    isFinish: false,
+    itemId: "Robotic Arm",
+    score: 200,
+  },
+  {
+    name: "Power supply",
+    desc: `The Perseverance rover requires electrical power to operate. Without power, the rover cannot move, use its science instruments, or communicate with Earth.Perseverance carries a radioisotope power system. This power system produces a dependable flow of electricity using the heat of plutonium's radioactive decay as its "fuel."`,
+    imgPath: "./images/bat.png",
+    deco: "upgrade",
+    type: "upgrade",
+    isFinish: false,
+    itemId: "Power supply",
+    score: 200,
+  },
+  {
+    name: "wheel",
+    desc: `The Perseverance rover has six wheels, each with its own individual motor. The two front and two rear wheels also have individual steering motors. This steering capability allows the vehicle to turn in place, a full 360 degrees. The four-wheel steering also allows the rover to swerve and curve, making arcing turns.`,
+    imgPath: "./images/wheel.png",
+    deco: "upgrade",
+    type: "upgrade",
+    isFinish: false,
+    itemId: "wheel",
+    score: 200,
+  },
+  {
+    name: "Mastcam-Z",
+    desc: `The Mastcam-Z is the name of the mast-mounted camera system that is equipped with a zoom function on the Perseverance rover. Mastcam-Z has cameras that can zoom in, focus, and take 3D pictures and video at high speed to allow detailed examination of distant objects.it fucntion is To take high-definition video, panoramic color and 3D images of the Martian surface and features in the atmosphere with a zoom lens to magnify distant targets`,
+    imgPath: "./images/mastcam.png",
+    deco: "upgrade",
+    type: "upgrade",
+    isFinish: false,
+    itemId: "Mastcam-Z",
+    score: 200,
+  },
+  {
+    name: "UHF",
+    desc: `Ultra-High Frequency Antenna Most often, Mars 2020 uses its ultra-high frequency (UHF) antenna (about 400 megahertz) to communicate with Earth through NASA's orbiters around Mars. Because the rover and orbiter antennas are within close range of each other, they act a little like walkie-talkies compared to the long-range telecommunications with Earth provided by the low-gain and high-gain antennas. It generally takes about 5 to 20 minutes for a radio signal to travel the distance between Mars and Earth, depending on planet positions. Using orbiters to relay messages is beneficial because they are much closer to Perseverance than the Deep Space Network (DSN) antennas on Earth. The mass- and power-constrained rover can achieve high data rates of up to 2 megabits per second on the relatively short-distance relay link to the orbiters overhead. The orbiters then use their much larger antennas and transmitters to relay that data on the long-distance link back to Earth.Tech Specs Main Job	Transmitting Data to Earth through Mars Orbiters Radio Frequency	Ultra-High Frequency (UHF) band (about 400 megahertz) Transmission Rates	Up to 2 megabits per second on the rover-to-orbiter relay link.`,
+    imgPath: "./images/UHF.png",
+    deco: "upgrade",
+    type: "upgrade",
+    isFinish: false,
+    itemId: "UHF",
+    score: 200,
+  },
+  {
+    name: "Yi long ma entered your office your engineer confuse him with elon musk turn left and go 1 tile forward and turn another left and go 2 tile forward",
     deco: "bad",
-    posX: 2,
-    posY: 0,
     type: "bad",
     isFinish: false,
-    timeout: 2000,
+    timeout: 5000,
+    exec: () => {
+      sendCommands(["left", "forward", "left", "forward", "forward"], true);
+    },
+  },
+  {
+    name: "some random drone have kidnap your preserverance go 2 tile forward",
+    deco: "bad",
+    type: "bad",
+    isFinish: false,
+    timeout: 5000,
+    exec: () => {
+      sendCommands(["forward", "forward"], true);
+    },
+  },
+  {
+    name: "what the hell is that? turn right and go 1 tile backward and lost 200 point",
+    deco: "bad",
+    type: "bad",
+    isFinish: false,
+    timeout: 5000,
+    exec: () => {
+      sendCommands(["right", "backward"], true);
+      score.sub(200);
+    },
+  },
+  {
+    name: "Your signal got interrupted turn right and go 2 tiles forward",
+    deco: "bad",
+    type: "bad",
+    isFinish: false,
+    timeout: 5000,
+    exec: () => {
+      sendCommands(["right", "forward", "forward"], true);
+    },
+  },
+  {
+    name: "oopsie the preserverance trip some rocks go 2 tiles forward",
+    deco: "bad",
+    type: "bad",
+    isFinish: false,
+    timeout: 5000,
+    exec: () => {
+      sendCommands(["forward", "forward"], true);
+    },
+  },
+  {
+    name: "The preserverance got back pain (how?) well let her get some rest go 3 tile backward",
+    deco: "bad",
+    type: "bad",
+    isFinish: false,
+    timeout: 5000,
     exec: () => {
       sendCommands(["backward", "backward", "backward"], true);
+    },
+  },
+  {
+<<<<<<< Updated upstream
+    name: "we found some cute cat on mars so we decided to pet them go 1 tiles forward turn right and go another 1 tiles forward",
+    deco: "bad",
+    type: "bad",
+    isFinish: false,
+    timeout: 5000,
+    exec: () => {
+      sendCommands(["forward", "right", "forward"], true);
+    },
+  },
+  {
+    name: "You have a dance battle with dance king on mars go 3 tiles forward and 4 tiles backward and lost 4 energy",
+    deco: "bad",
+=======
+    name: "New discovery! you found water on mars",
+    imgPath: "./images/water.png",
+    deco: "good",
+    type: "good",
+    isFinish: false,
+    score: 100,
+    checkSpecial: null,
+  },
+  {
+    name: "we Found a stone arrangement that look like giant frog",
+    imgPath: "./images/frog-stone.png",
+    deco: "good",
+    type: "good",
+    isFinish: false,
+    score: 50,
+    checkSpecial: null,
+  },
+  {
+    name: "You have collected stone example!",
+    desc: 'Rock samples collected from drilling It will be packed in titanium tubes awaiting repatriation with a launch vehicle that will follow Mars in the future.',
+    imgPath: "./images/stone.png",
+    deco: "good",
+    type: "good",
+    isFinish: false,
+    score: 120,
+    checkSpecial: "Robotic Arm",
+    extraPoint: "100",
+  },
+  {
+    name: "we have discovered the soil of mars are suitable for plantation",
+    desc: 'The scientist are finding the way to improve soil quality so we can plant on mars',
+    imgPath: "./images/plant.png",
+    deco: "good",
+    type: "good",
+    isFinish: false,
+    score: 200,
+    checkSpecial: null,
+  },
+  {
+    name: "You have discover weird surface of mars",
+    desc: 'we feels excited so we give you da points',
+    imgPath: "./images/texture.png",
+    deco: "good",
+    type: "good",
+    isFinish: false,
+    score: 130,
+    checkSpecial: null,
+  },
+  {
+    name: "The preserverance have fallen into mars crater",
+    desc: 'if you have power supply upgrade you will not lost energy if not you will lost 5 energy',
+    deco: "half",
+>>>>>>> Stashed changes
+    type: "bad",
+    isFinish: false,
+    timeout: 5000,
+    exec: () => {
+<<<<<<< Updated upstream
+      sendCommands(["forward", "forward", "forward", "backward", "backward", "backward", "backward"], true);
+      enegry.sub(4);
+    },
+  },
+  {
+    name: "Our engineer misinput! turn left and go 2 tiles forward",
+    deco: "bad",
+=======
+      if (backpack.checkIfHave("Power supply")) {
+        score.add(200);
+      }else{
+        enegry.sub(5);
+      };
+    },
+  },
+  {
+    name: "The preserverance are running through the rocky surface of mars",
+    desc: 'if you have wheel upgrade gain 200 points if not lost 4 energy',
+    deco: "half",
+>>>>>>> Stashed changes
+    type: "bad",
+    isFinish: false,
+    timeout: 5000,
+    exec: () => {
+<<<<<<< Updated upstream
+      sendCommands(["left", "forward", "forward"], true);
+=======
+      if (backpack.checkIfHave("wheel upgrade")) {
+        score.add(180);
+      }else{
+        enegry.sub(4);
+      };
+>>>>>>> Stashed changes
     },
   },
 ];

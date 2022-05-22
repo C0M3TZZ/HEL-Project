@@ -558,6 +558,10 @@ img#stars {
   font-weight: lighter;
 }
 
+.rocket[data-status="inspecRocket"] .boxtext{
+  opacity: 100%;
+}
+
 .rocket[data-status="inspecRocket"] .t_r{
   transform: translate(80%, -10%) rotate(0deg);
 }
@@ -584,6 +588,42 @@ img#stars {
 
 .rocket[data-status="inspecRocket"] .rocketHead{
   transform: translate(0, 20%) rotate(0deg);
+}
+
+.boxtext {
+  width: 50vh;
+  color: whitesmoke;
+  opacity: 0;
+}
+
+.texttr {
+  position: absolute;
+  left: 250%;
+  top: 0;
+}
+
+.textcl {
+  position: absolute;
+  left: -420%;
+  top: 60%;
+}
+
+#rotatehr {
+  transform: rotate(160deg);
+  position: absolute;
+  top: 28%;
+  right: 96%;
+  width: 450px;
+  z-index: 10;
+}
+
+#rotatehr2 {
+  transform: rotate(140deg);
+  position: absolute;
+  top: 18%;
+  right: 95%;
+  width: 154px;
+  z-index: 10;
 }
 
 .context{
