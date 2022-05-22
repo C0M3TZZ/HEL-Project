@@ -303,7 +303,7 @@ async function sendCommands(commands = getCommands(), bypass = false) {
 }
 
 let skip_game = () => {
-  window.location.assign("./landing");
+  window.location.assign("./landing/index.html");
 }
 
 let load_Inv = (open) => {
