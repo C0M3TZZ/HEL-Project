@@ -131,15 +131,6 @@ img#stars {
   font-family: "Heebo", sans-serif;
 }
 
-/* #subtext {
-  font-family: "Mitr", sans-serif;
-  font-size: 100px;
-  font-weight: 900;
-  letter-spacing: 30px;
-  margin: 0%;
-  margin-left: 20px;
-} */
-
 #text {
   font-size: 1800%;
   font-weight: 900;
@@ -191,6 +182,7 @@ img#stars {
 .rocket[data-status="step7"] .t_r,
 .rocket[data-status="step8"] .t_r,
 .rocket[data-status="step9"] .t_r,
+.rocket[data-status="step10"] .t_r,
 .rocket[data-status="endcredit"] .t_r {
   transform: translate(30%, -50%) rotate(-45deg);
   opacity: 0;
@@ -206,6 +198,7 @@ img#stars {
 .rocket[data-status="step7"] .t_l,
 .rocket[data-status="step8"] .t_l,
 .rocket[data-status="step9"] .t_l,
+.rocket[data-status="step10"] .t_l,
 .rocket[data-status="endcredit"] .t_l {
   transform: translate(-30%, -50%) rotate(45deg);
   opacity: 0;
@@ -220,6 +213,7 @@ img#stars {
 .rocket[data-status="step7"] .c_r,
 .rocket[data-status="step8"] .c_r,
 .rocket[data-status="step9"] .c_r,
+.rocket[data-status="step10"] .c_r,
 .rocket[data-status="endcredit"] .c_r {
   transform: translate(-30%, -50%) rotate(45deg);
   opacity: 0;
@@ -234,6 +228,7 @@ img#stars {
 .rocket[data-status="step7"] .c_l,
 .rocket[data-status="step8"] .c_l,
 .rocket[data-status="step9"] .c_l,
+.rocket[data-status="step10"] .c_l,
 .rocket[data-status="endcredit"] .c_l {
   transform: translate(30%, -50%) rotate(-45deg);
   opacity: 0;
@@ -247,6 +242,7 @@ img#stars {
 .rocket[data-status="step7"] .body,
 .rocket[data-status="step8"] .body,
 .rocket[data-status="step9"] .body,
+.rocket[data-status="step10"] .body,
 .rocket[data-status="endcredit"] .body {
   transform: translate(0, -20%);
   /* opacity: 0; */
@@ -259,6 +255,7 @@ img#stars {
 .rocket[data-status="step7"] .body,
 .rocket[data-status="step8"] .body,
 .rocket[data-status="step9"] .body,
+.rocket[data-status="step10"] .body,
 .rocket[data-status="endcredit"] .body {
   transform: translate(0, -50%);
   opacity: 0;
@@ -271,6 +268,7 @@ img#stars {
 .rocket[data-status="step7"] .head,
 .rocket[data-status="step8"] .head,
 .rocket[data-status="step9"] .head,
+.rocket[data-status="step10"] .head,
 .rocket[data-status="endcredit"] .head {
   transform: translate(0, -25%);
   /* opacity: 0; */
@@ -282,6 +280,7 @@ img#stars {
 .rocket[data-status="step7"] .head,
 .rocket[data-status="step8"] .head,
 .rocket[data-status="step9"] .head,
+.rocket[data-status="step10"] .head,
 .rocket[data-status="endcredit"] .head {
   transform: translate(0, -50%);
   opacity: 0;
@@ -293,6 +292,7 @@ img#stars {
 .rocket[data-status="step7"] .rocketHead,
 .rocket[data-status="step8"] .rocketHead,
 .rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="step10"] .rocketHead,
 .rocket[data-status="endcredit"] .rocketHead {
   transform: translate(0, -25%);
   /* opacity: 0; */
@@ -303,6 +303,7 @@ img#stars {
 .rocket[data-status="step7"] .rocketHead,
 .rocket[data-status="step8"] .rocketHead,
 .rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="step10"] .rocketHead,
 .rocket[data-status="endcredit"] .rocketHead {
   transform: translate(0, -60%) scale(2,2);
 }
@@ -319,6 +320,7 @@ img#stars {
 .rocket[data-status="step7"] .fire,
 .rocket[data-status="step8"] .fire,
 .rocket[data-status="step9"] .fire,
+.rocket[data-status="step10"] .fire,
 .rocket[data-status="endcredit"] .fire {
   transform: translate(0, -60%) scale(2,2);
   opacity: 0;
@@ -339,28 +341,89 @@ img#stars {
   opacity: 0;
 }
 
-.rocket[data-status="step7"] .parachute,
-.rocket[data-status="step8"] .parachute,
-.rocket[data-status="step9"] .parachute {
+.rocket[data-status="step7"] .parachute {
   transform: scale(3,3);
 }
 
-.rocket[data-status="step7"] .rocketHead,
-.rocket[data-status="step8"] .rocketHead,
-.rocket[data-status="step9"] .rocketHead {
+.rocket[data-status="step8"] .parachute,
+.rocket[data-status="step9"] .parachute,
+.rocket[data-status="step10"] .parachute {
+  transform: translate(0, -100%) scale(3,3);
+  opacity: 0;
+}
+
+.rocket[data-status="step7"] .rocketHead {
   transform: translate(0, -20%) scale(2,2);
 }
 
 .rocket[data-status="step8"] .rocketHead,
-.rocket[data-status="step9"] .rocketHead {
-  transform: translate(0, -60%) scale(2,2);
-}
-
-.rocket[data-status="step8"] .parachute,
-.rocket[data-status="step9"] .parachute {
-  transform: translate(0, -80%) scale(3,3);
+.rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="step10"] .rocketHead {
+  transform: translate(0, -100%) scale(2,2);
   opacity: 0;
 }
+
+.rocket[data-status="inspecRocket"] .topPartRover,
+.rocket[data-status="step1"] .topPartRover,
+.rocket[data-status="step2"] .topPartRover,
+.rocket[data-status="step3"] .topPartRover,
+.rocket[data-status="step4"] .topPartRover,
+.rocket[data-status="step5"] .topPartRover,
+.rocket[data-status="inspecRover"] .topPartRover,
+.rocket[data-status="step6"] .topPartRover,
+.rocket[data-status="step7"] .topPartRover,
+.rocket[data-status="inspecRocket"] .bottomPartRover,
+.rocket[data-status="step1"] .bottomPartRover,
+.rocket[data-status="step2"] .bottomPartRover,
+.rocket[data-status="step3"] .bottomPartRover,
+.rocket[data-status="step4"] .bottomPartRover,
+.rocket[data-status="step5"] .bottomPartRover,
+.rocket[data-status="inspecRover"] .bottomPartRover,
+.rocket[data-status="step6"] .bottomPartRover,
+.rocket[data-status="step7"] .bottomPartRover {
+  opacity: 0;
+}
+
+.rocket[data-status="step8"] .topPartRover,
+.rocket[data-status="step9"] .topPartRover,
+.rocket[data-status="step8"] .bottomPartRover {
+  transform: translate(0, 40%) scale(2,2);
+}
+
+.rocket[data-status="step9"] .topPartRover,
+.rocket[data-status="step10"] .topPartRover {
+  transform: translate(0, -30%) scale(2,2);
+  opacity: 0;
+}
+
+.rocket[data-status="step9"] .bottomPartRover {
+  transform: scale(2.5,2.5);
+}
+
+.rocket[data-status="step10"] .bottomPartRover {
+  transform: translate(0, -80%) scale(2,2);
+  opacity: 0;
+}
+
+.rocket[data-status="inspecRocket"] .rover,
+.rocket[data-status="step1"] .rover,
+.rocket[data-status="step2"] .rover,
+.rocket[data-status="step3"] .rover,
+.rocket[data-status="step4"] .rover,
+.rocket[data-status="step5"] .rover,
+.rocket[data-status="inspecRover"] .rover,
+.rocket[data-status="step6"] .rover,
+.rocket[data-status="step7"] .rover,
+.rocket[data-status="step8"] .rover,
+.rocket[data-status="step9"] .rover {
+  transform: translate(0, 200%) scale(2,2);
+  opacity: 0;
+}
+
+.rocket[data-status="step10"] .rover {
+  transform: translate(0, 250%) scale(2.5,2.5);
+}
+
 
 .rocketPart {
   position: absolute;
