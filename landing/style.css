@@ -939,9 +939,9 @@ img#stars {
 }
 
 #text_date {
-  font-size: 1100%;
+  font-size: 200%;
   font-weight: 900;
-  position: absolute;
-  top: 8%;
-
+  margin: 5%;
+  margin-left: 5%;
+  color: #fff;
 }

@@ -85,7 +85,7 @@ let score = {
 };
 
 let enegry = {
-  value: 100,
+  value: (panelRes.height * panelRes.width) * 1.5,
   get: () => {
     return enegry.value;
   },
@@ -105,6 +105,7 @@ let enegry = {
   },
 };
 
+statusUI.energys.innerHTML = `Energy : ${enegry.get()}`;
 
 let backpack = {
   items: [],
