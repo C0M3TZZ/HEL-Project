@@ -139,7 +139,6 @@ img#stars {
   font-size: 1200%;
   font-weight: 900;
   top: 8%;
-
   animation: text 3s infinite linear;
   animation-iteration-count: 1;
 }
@@ -541,6 +540,14 @@ img#stars {
   font-weight: lighter;
 }
 
+.rocket p {
+  opacity: 0;
+}
+
+.rocket[data-status="inspecRocket"] p {
+  opacity: 100%;
+}
+
 .rocket[data-status="inspecRocket"] .t_r{
   transform: translate(80%, -10%) rotate(0deg);
 }
@@ -569,7 +576,7 @@ img#stars {
   transform: translate(0, 20%) rotate(0deg);
 }
 
-.context{
+/* .context{
   position: absolute;
   top: 0;
   left: 145%;
@@ -680,7 +687,7 @@ img#stars {
 }
 
 /* ---------------------------- */
-.context_cl{
+/* .context_cl{
   position: absolute;
   bottom: 25%;
   left: 160%;
@@ -733,9 +740,9 @@ img#stars {
 .c_l :hover .context_cl{
   opacity: 1;
   visibility: visible;
-}
+} */
 /* ---------------------------- */
-.context_cr{
+/* .context_cr{
   position: absolute;
   bottom: 25%;
   right: 140%;
@@ -788,9 +795,9 @@ img#stars {
 .c_r :hover .context_cr{
   opacity: 1;
   visibility: visible;
-}
+} */
 /* ---------------------------- */
-.context_head{
+/* .context_head{
   position: absolute;
   top:0%;
   left: 400%;
@@ -813,7 +820,7 @@ img#stars {
   bottom: 20%;
   z-index: 20;
   background-color: #ae6b50;
-}
+} */ 
 
 /* ---------------------------- */
 
