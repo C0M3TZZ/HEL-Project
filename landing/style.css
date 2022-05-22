@@ -124,18 +124,29 @@ img#stars {
 .containerText {
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   flex-direction: row;
+  justify-content: center;
   margin-top: 6%;
   color: #fff;
   font-family: "Heebo", sans-serif;
 }
 
 #text {
-  font-size: 1800%;
+  position: absolute;
+  font-size: 1200%;
   font-weight: 900;
-  margin: 0%;
-  margin-top: 8%;
+  top: 8%;
+
+  animation: text 3s infinite linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes text{
+  from {top: -150%;}
+  to {top: 8%;}
 }
 
 .rocket {
@@ -530,31 +541,31 @@ img#stars {
   font-weight: lighter;
 }
 
-.rocket[data-status="inspecRocket_hover"] .t_r{
+.rocket[data-status="inspecRocket"] .t_r{
   transform: translate(80%, -10%) rotate(0deg);
 }
 
-.rocket[data-status="inspecRocket_hover"] .t_l{
+.rocket[data-status="inspecRocket"] .t_l{
   transform: translate(-80%, -10%) rotate(0deg);
 }
 
-.rocket[data-status="inspecRocket_hover"] .c_r{
+.rocket[data-status="inspecRocket"] .c_r{
   transform: translate(-80%, 10%) rotate(0deg);
 }
 
-.rocket[data-status="inspecRocket_hover"] .c_l{
+.rocket[data-status="inspecRocket"] .c_l{
   transform: translate(80%, 10%) rotate(0deg);
 }
 
-.rocket[data-status="inspecRocket_hover"] .body{
+.rocket[data-status="inspecRocket"] .body{
   transform: translate(0, -10%) rotate(0deg);
 }
 
-.rocket[data-status="inspecRocket_hover"] .head{
+.rocket[data-status="inspecRocket"] .head{
   transform: translate(0, 10%) rotate(0deg);
 }
 
-.rocket[data-status="inspecRocket_hover"] .rocketHead{
+.rocket[data-status="inspecRocket"] .rocketHead{
   transform: translate(0, 20%) rotate(0deg);
 }
 
@@ -790,50 +801,20 @@ img#stars {
   transition: all 0.5s;
 }
 
-.context_head h1::after{
-  content: "";
-  width: 0%;
-  height: 1px;
-  background: whitesmoke;
-  position: absolute;
-  bottom: 0%;
-  right: 0%;
-  transition: all 0.5s;
+.area_head:hover{
+  background-color: #723b26;
 }
 
-.area_head:hover .context_head h1::after{
-  width: 100%;
-}
-.area_head:hover .context_head h1::before{
-  width: 60%;
-}
-
-.context_head h1::before{
-  content: "";
-  width: 0%;
-  height: 1px;
-  background: whitesmoke;
-  position: absolute;
-  bottom: 0%;
-  left: 100%;
-  transition: all 0.5s;
-  transform: rotate(-70deg);
-  transform-origin: bottom left;
-}
-
-.rocket .head .area_head{
+.area_head{
   width: 65px;
   height: 210px;
   right: 25%;
   position: absolute;
   bottom: 20%;
   z-index: 20;
+  background-color: #ae6b50;
 }
 
-.rocket .head .area_head:hover .context_head{
-  opacity: 1;
-  visibility: visible;
-}
 /* ---------------------------- */
 
 @keyframes slip {
