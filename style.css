@@ -325,11 +325,15 @@ body {
 
 .textStatus h1 {
     color: #148f00;
+    font-size: 26px;
     letter-spacing: 5px;
+    margin: 0;
+    margin-bottom: 5px;
 }
 
 .textStatus p {
     color: #fff;
+    margin: 0;
 }
 
 .boxScore {
@@ -367,6 +371,13 @@ body {
 .textScore h1 {
     color: #148f00;
     letter-spacing: 10px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.textScore p {
+    font-size: 24px;
+    margin: 0;
 }
 
 .commandPanel {
