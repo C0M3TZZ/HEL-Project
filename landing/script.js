@@ -23,6 +23,18 @@ getAllFullPage.forEach((el) => {
   test.observe(el);
 });
 
+rocket.addEventListener('mouseenter', () => {
+  if(rocket.dataset.status == "inspecRocket"){
+    rocket.dataset.status = "inspecRocket_hover";
+  }
+});
+
+rocket.addEventListener('mouseleave', () => {
+  if(rocket.dataset.status == "inspecRocket_hover"){
+    rocket.dataset.status = "inspecRocket";
+  }
+});
+
 let stars = document.getElementById("stars");
 let sun = document.getElementById("sun");
 let header = document.querySelector("header");
@@ -31,5 +43,4 @@ window.addEventListener("scroll", function () {
   let value = window.scrollY;
   stars.style.left = value * 0.15 + "px";
   sun.style.left = value * -0.2 + "px";
-  header.style.top = value * 0.5 + "px";
 });

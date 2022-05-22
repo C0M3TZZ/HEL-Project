@@ -78,6 +78,23 @@ let enegry = {
     statusUI.energys.innerHTML = `Energy : ${enegry.value}`;
   },
 };
+
+let backpack = {
+  items: [],
+  add: (item) => {
+    backpack.items.push(item);
+  },
+  remove: (item) => {
+    backpack.items.splice(backpack.items.indexOf(item), 1);
+  },
+  checkIfHave: (item) => {
+    return backpack.items.includes(item);
+  },
+  get: () => {
+    return backpack.items;
+  }
+}
+
 let eventArray = [
   {
     name: "TEST Subject",
@@ -88,6 +105,9 @@ let eventArray = [
     type: "good",
     isFinish: false,
     score: 10,
+    addUpgrade: "test",
+    checkSpecial: null,
+    extraPoint: 0,
   },
   {
     name: "หินรูปกบ",
@@ -104,6 +124,9 @@ let eventArray = [
     type: "good",
     isFinish: false,
     score: 10,
+    addUpgrade: null,
+    checkSpecial: "test",
+    extraPoint: 100,
   },
   {
     name: "Kuy Q Yai Lek",
@@ -129,7 +152,6 @@ for (let index = 0; index < eventArray.length; index++) {
 
 let trigger_alert_box = (text, timeout) => {
   alert_box.element.classList.remove("hide");
-  console.log(alert_box.content);
   alert_box.content.innerHTML = text;
   setTimeout(() => {
     alert_box.element.classList.add("hide");
@@ -142,8 +164,12 @@ function checkEvent() {
     if (getEvent.type == "good" && !getEvent.isFinish) {
       toggleModal(getEvent);
       score.add(getEvent.score);
-      console.log(score.get());
-      // score.get();
+      if (getEvent.addUpgrade != null) {
+        backpack.add(getEvent.addUpgrade);
+      }
+      if (getEvent.checkSpecial != null && backpack.checkIfHave(getEvent.checkSpecial)) {
+        score.add(getEvent.extraPoint);
+      }
       getEvent.isFinish = true;
     }
     if (getEvent.type == "bad" && !getEvent.isFinish) {

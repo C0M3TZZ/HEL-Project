@@ -141,9 +141,14 @@ img#stars {
 .rocket {
   position: fixed;
   top: 10%;
-  left: 48%;
+  left: calc(50% - (140px / 2));
+  width: 140px;
+  height: 671.5px;
   transition: all 0.5s;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rocket img {
@@ -313,7 +318,8 @@ img#stars {
 .rocket[data-status="step2"] .fire,
 .rocket[data-status="step3"] .fire,
 .rocket[data-status="step4"] .fire,
-.rocket[data-status="step5"] .fire {
+.rocket[data-status="step5"] .fire,
+.rocket[data-status="inspecRocket_hover"] .fire {
   opacity: 0;
 }
 .rocket[data-status="inspecRover"] .fire,
@@ -321,7 +327,8 @@ img#stars {
 .rocket[data-status="step8"] .fire,
 .rocket[data-status="step9"] .fire,
 .rocket[data-status="step10"] .fire,
-.rocket[data-status="endcredit"] .fire {
+.rocket[data-status="endcredit"] .fire,
+.rocket[data-status="inspecRocket_hover"] .fire {
   transform: translate(0, -60%) scale(2,2);
   opacity: 0;
 }
@@ -337,7 +344,8 @@ img#stars {
 .rocket[data-status="step4"] .parachute,
 .rocket[data-status="step5"] .parachute,
 .rocket[data-status="inspecRover"] .parachute,
-.rocket[data-status="step6"] .parachute {
+.rocket[data-status="step6"] .parachute,
+.rocket[data-status="inspecRocket_hover"] .parachute {
   opacity: 0;
 }
 
@@ -347,7 +355,8 @@ img#stars {
 
 .rocket[data-status="step8"] .parachute,
 .rocket[data-status="step9"] .parachute,
-.rocket[data-status="step10"] .parachute {
+.rocket[data-status="step10"] .parachute,
+.rocket[data-status="endcredit"] .parachute {
   transform: translate(0, -100%) scale(3,3);
   opacity: 0;
 }
@@ -380,7 +389,8 @@ img#stars {
 .rocket[data-status="step5"] .bottomPartRover,
 .rocket[data-status="inspecRover"] .bottomPartRover,
 .rocket[data-status="step6"] .bottomPartRover,
-.rocket[data-status="step7"] .bottomPartRover {
+.rocket[data-status="step7"] .bottomPartRover,
+.rocket[data-status="inspecRocket_hover"] .bottomPartRover {
   opacity: 0;
 }
 
@@ -391,7 +401,8 @@ img#stars {
 }
 
 .rocket[data-status="step9"] .topPartRover,
-.rocket[data-status="step10"] .topPartRover {
+.rocket[data-status="step10"] .topPartRover,
+.rocket[data-status="inspecRocket_hover"] .topPartRover {
   transform: translate(0, -30%) scale(2,2);
   opacity: 0;
 }
@@ -400,7 +411,8 @@ img#stars {
   transform: scale(2.5,2.5);
 }
 
-.rocket[data-status="step10"] .bottomPartRover {
+.rocket[data-status="step10"] .bottomPartRover,
+.rocket[data-status="inspecRocket_hover"] .bottomPartRover {
   transform: translate(0, -80%) scale(2,2);
   opacity: 0;
 }
@@ -415,7 +427,8 @@ img#stars {
 .rocket[data-status="step6"] .rover,
 .rocket[data-status="step7"] .rover,
 .rocket[data-status="step8"] .rover,
-.rocket[data-status="step9"] .rover {
+.rocket[data-status="step9"] .rover,
+.rocket[data-status="inspecRocket_hover"] .rover {
   transform: translate(0, 200%) scale(2,2);
   opacity: 0;
 }
@@ -515,6 +528,89 @@ img#stars {
 
 #light {
   font-weight: lighter;
+}
+
+.rocket[data-status="inspecRocket_hover"] .t_r{
+  transform: translate(80%, -10%) rotate(0deg);
+}
+
+.rocket[data-status="inspecRocket_hover"] .t_l{
+  transform: translate(-80%, -10%) rotate(0deg);
+}
+
+.rocket[data-status="inspecRocket_hover"] .c_r{
+  transform: translate(-80%, 10%) rotate(0deg);
+}
+
+.rocket[data-status="inspecRocket_hover"] .c_l{
+  transform: translate(80%, 10%) rotate(0deg);
+}
+
+.rocket[data-status="inspecRocket_hover"] .body{
+  transform: translate(0, -10%) rotate(0deg);
+}
+
+.rocket[data-status="inspecRocket_hover"] .head{
+  transform: translate(0, 10%) rotate(0deg);
+}
+
+.rocket[data-status="inspecRocket_hover"] .rocketHead{
+  transform: translate(0, 20%) rotate(0deg);
+}
+
+.context{
+  position: absolute;
+  top: 0;
+  left: 145%;
+  width: 50vh;
+  color: whitesmoke;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.context h1::after{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.area:hover .context h1::after{
+  width: 100%;
+}
+.area:hover .context h1::before{
+  width: 30%;
+}
+
+.context h1::before{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+  transform: rotate(245deg);
+  transform-origin: bottom left;
+}
+
+.t_r .area{
+  width: 40px;
+  height: 270px;
+  right: 0;
+  position: absolute;
+  top: 0;
+}
+
+.t_r .area:hover .context{
+  opacity: 1;
+  visibility: visible;
 }
 
 @keyframes slip {
