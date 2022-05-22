@@ -613,6 +613,174 @@ img#stars {
   visibility: visible;
 }
 
+.context_tl{
+  position: absolute;
+  top: 0;
+  right: 140%;
+  width: 50vh;
+  color: whitesmoke;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.context_tl h1::after{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+
+.area_tl:hover .context_tl h1::after{
+  width: 100%;
+}
+.area_tl:hover .context_tl h1::before{
+  width: 30%;
+}
+
+.context_tl h1::before{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  transition: all 0.5s;
+  transform: rotate(-65deg);
+  transform-origin: bottom left;
+}
+
+.t_l .area_tl{
+  width: 40px;
+  height: 270px;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.t_l .area_tl:hover .context_tl{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------------------------- */
+.context_cl{
+  position: absolute;
+  bottom: 25%;
+  left: 160%;
+  width: 50vh;
+  color: whitesmoke;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.context_cl h1::after{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  transition: all 0.5s;
+}
+
+.area_cl:hover .context_cl h1::after{
+  width: 100%;
+}
+.area_cl:hover .context_cl h1::before{
+  width: 30%;
+}
+
+.context_cl h1::before{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  transition: all 0.5s;
+  transform: rotate(245deg);
+  transform-origin: bottom left;
+}
+
+.c_l .area_cl{
+  width: 55px;
+  height: 330px;
+  right: 20%;
+  position: absolute;
+  bottom: 3.5%;
+}
+
+.c_l :hover .context_cl{
+  opacity: 1;
+  visibility: visible;
+}
+/* ---------------------------- */
+.context_cr{
+  position: absolute;
+  bottom: 25%;
+  right: 140%;
+  width: 50vh;
+  color: whitesmoke;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.context_cr h1::after{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  transition: all 0.5s;
+}
+
+.area_cr:hover .context_cr h1::after{
+  width: 100%;
+}
+.area_cr:hover .context_cr h1::before{
+  width: 30%;
+}
+
+.context_cr h1::before{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0%;
+  left: 100%;
+  transition: all 0.5s;
+  transform: rotate(-70deg);
+  transform-origin: bottom left;
+}
+
+.c_r .area_cr{
+  width: 55px;
+  height: 330px;
+  right: 40%;
+  position: absolute;
+  bottom: 3.5%;
+}
+
+.c_r :hover .context_cr{
+  opacity: 1;
+  visibility: visible;
+}
+/* ---------------------------- */
+
+
 @keyframes slip {
   from {transform: translate(0, 1000px)}
   to {transform: translate(0, -1000px)}
