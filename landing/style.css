@@ -139,6 +139,7 @@ img#stars {
   font-size: 1200%;
   font-weight: 900;
   top: 8%;
+
   animation: text 3s infinite linear;
   animation-iteration-count: 1;
 }
@@ -198,6 +199,7 @@ img#stars {
 .rocket[data-status="step8"] .t_r,
 .rocket[data-status="step9"] .t_r,
 .rocket[data-status="step10"] .t_r,
+.rocket[data-status="endCredit"] .t_r,
 .rocket[data-status="endcredit"] .t_r {
   transform: translate(30%, -50%) rotate(-45deg);
   opacity: 0;
@@ -214,6 +216,7 @@ img#stars {
 .rocket[data-status="step8"] .t_l,
 .rocket[data-status="step9"] .t_l,
 .rocket[data-status="step10"] .t_l,
+.rocket[data-status="endCredit"] .t_l,
 .rocket[data-status="endcredit"] .t_l {
   transform: translate(-30%, -50%) rotate(45deg);
   opacity: 0;
@@ -229,6 +232,7 @@ img#stars {
 .rocket[data-status="step8"] .c_r,
 .rocket[data-status="step9"] .c_r,
 .rocket[data-status="step10"] .c_r,
+.rocket[data-status="endCredit"] .c_r,
 .rocket[data-status="endcredit"] .c_r {
   transform: translate(-30%, -50%) rotate(45deg);
   opacity: 0;
@@ -244,6 +248,7 @@ img#stars {
 .rocket[data-status="step8"] .c_l,
 .rocket[data-status="step9"] .c_l,
 .rocket[data-status="step10"] .c_l,
+.rocket[data-status="endCredit"] .c_l,
 .rocket[data-status="endcredit"] .c_l {
   transform: translate(30%, -50%) rotate(-45deg);
   opacity: 0;
@@ -258,6 +263,7 @@ img#stars {
 .rocket[data-status="step8"] .body,
 .rocket[data-status="step9"] .body,
 .rocket[data-status="step10"] .body,
+.rocket[data-status="endCredit"] .body,
 .rocket[data-status="endcredit"] .body {
   transform: translate(0, -20%);
   /* opacity: 0; */
@@ -271,6 +277,7 @@ img#stars {
 .rocket[data-status="step8"] .body,
 .rocket[data-status="step9"] .body,
 .rocket[data-status="step10"] .body,
+.rocket[data-status="endCredit"] .body,
 .rocket[data-status="endcredit"] .body {
   transform: translate(0, -50%);
   opacity: 0;
@@ -284,6 +291,7 @@ img#stars {
 .rocket[data-status="step8"] .head,
 .rocket[data-status="step9"] .head,
 .rocket[data-status="step10"] .head,
+.rocket[data-status="endCredit"] .head,
 .rocket[data-status="endcredit"] .head {
   transform: translate(0, -25%);
   /* opacity: 0; */
@@ -296,6 +304,7 @@ img#stars {
 .rocket[data-status="step8"] .head,
 .rocket[data-status="step9"] .head,
 .rocket[data-status="step10"] .head,
+.rocket[data-status="endCredit"] .head,
 .rocket[data-status="endcredit"] .head {
   transform: translate(0, -50%);
   opacity: 0;
@@ -308,6 +317,7 @@ img#stars {
 .rocket[data-status="step8"] .rocketHead,
 .rocket[data-status="step9"] .rocketHead,
 .rocket[data-status="step10"] .rocketHead,
+.rocket[data-status="endCredit"] .rocketHead,
 .rocket[data-status="endcredit"] .rocketHead {
   transform: translate(0, -25%);
   /* opacity: 0; */
@@ -319,6 +329,7 @@ img#stars {
 .rocket[data-status="step8"] .rocketHead,
 .rocket[data-status="step9"] .rocketHead,
 .rocket[data-status="step10"] .rocketHead,
+.rocket[data-status="endCredit"] .rocketHead,
 .rocket[data-status="endcredit"] .rocketHead {
   transform: translate(0, -60%) scale(2,2);
 }
@@ -337,6 +348,7 @@ img#stars {
 .rocket[data-status="step8"] .fire,
 .rocket[data-status="step9"] .fire,
 .rocket[data-status="step10"] .fire,
+.rocket[data-status="endCredit"] .fire,
 .rocket[data-status="endcredit"] .fire,
 .rocket[data-status="inspecRocket_hover"] .fire {
   transform: translate(0, -60%) scale(2,2);
@@ -366,6 +378,7 @@ img#stars {
 .rocket[data-status="step8"] .parachute,
 .rocket[data-status="step9"] .parachute,
 .rocket[data-status="step10"] .parachute,
+.rocket[data-status="endCredit"] .parachute,
 .rocket[data-status="endcredit"] .parachute {
   transform: translate(0, -100%) scale(3,3);
   opacity: 0;
@@ -377,6 +390,7 @@ img#stars {
 
 .rocket[data-status="step8"] .rocketHead,
 .rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="endCredit"] .rocketHead,
 .rocket[data-status="step10"] .rocketHead {
   transform: translate(0, -100%) scale(2,2);
   opacity: 0;
@@ -412,6 +426,7 @@ img#stars {
 
 .rocket[data-status="step9"] .topPartRover,
 .rocket[data-status="step10"] .topPartRover,
+.rocket[data-status="endCredit"] .topPartRover,
 .rocket[data-status="inspecRocket_hover"] .topPartRover {
   transform: translate(0, -30%) scale(2,2);
   opacity: 0;
@@ -422,6 +437,7 @@ img#stars {
 }
 
 .rocket[data-status="step10"] .bottomPartRover,
+.rocket[data-status="endCredit"] .bottomPartRover,
 .rocket[data-status="inspecRocket_hover"] .bottomPartRover {
   transform: translate(0, -80%) scale(2,2);
   opacity: 0;
@@ -438,6 +454,8 @@ img#stars {
 .rocket[data-status="step7"] .rover,
 .rocket[data-status="step8"] .rover,
 .rocket[data-status="step9"] .rover,
+.rocket[data-status="step9"] .rover,
+.rocket[data-status="endCredit"] .rover,
 .rocket[data-status="inspecRocket_hover"] .rover {
   transform: translate(0, 200%) scale(2,2);
   opacity: 0;
@@ -540,14 +558,6 @@ img#stars {
   font-weight: lighter;
 }
 
-.rocket .boxtext {
-  opacity: 0;
-}
-
-.rocket[data-status="inspecRocket"] .boxtext{
-  opacity: 100%;
-}
-
 .rocket[data-status="inspecRocket"] .t_r{
   transform: translate(80%, -10%) rotate(0deg);
 }
@@ -576,42 +586,7 @@ img#stars {
   transform: translate(0, 20%) rotate(0deg);
 }
 
-.boxtext {
-  width: 50vh;
-  color: whitesmoke;
-  opacity: 0;
-}
-
-.texttr {
-  position: absolute;
-  left: 250%;
-  top: 0;
-}
-
-.textcl {
-  position: absolute;
-  left: -420%;
-  top: 60%;
-}
-
-#rotatehr {
-  transform: rotate(160deg);
-  position: absolute;
-  top: 28%;
-  right: 96%;
-  width: 450px;
-  z-index: 10;
-}
-
-#rotatehr2 {
-  transform: rotate(140deg);
-  position: absolute;
-  top: 18%;
-  right: 95%;
-  width: 154px;
-  z-index: 10;
-}
-/* .context{
+.context{
   position: absolute;
   top: 0;
   left: 145%;
@@ -722,7 +697,7 @@ img#stars {
 }
 
 /* ---------------------------- */
-/* .context_cl{
+.context_cl{
   position: absolute;
   bottom: 25%;
   left: 160%;
@@ -775,9 +750,9 @@ img#stars {
 .c_l :hover .context_cl{
   opacity: 1;
   visibility: visible;
-} */
+}
 /* ---------------------------- */
-/* .context_cr{
+.context_cr{
   position: absolute;
   bottom: 25%;
   right: 140%;
@@ -830,9 +805,9 @@ img#stars {
 .c_r :hover .context_cr{
   opacity: 1;
   visibility: visible;
-} */
+}
 /* ---------------------------- */
-/* .context_head{
+.context_head{
   position: absolute;
   top:0%;
   left: 400%;
@@ -854,8 +829,7 @@ img#stars {
   position: absolute;
   bottom: 20%;
   z-index: 20;
-  background-color: #ae6b50;
-} */ 
+}
 
 /* ---------------------------- */
 
