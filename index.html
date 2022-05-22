@@ -10,6 +10,25 @@
 
   <body>
     <div class="container">
+      <div class="tutor">
+        <div class="tutor_panel">
+          <div class="close_tutor" onclick="close_tutor()">
+            <img src="./images/multiply.png">
+          </div>
+          <h1>TEST</h1>
+          <p>tutor</p>
+        </div>
+      </div>
+      <div class="win hide">
+        <h1>You Win</h1>
+        <p>Score : <span id="win_score">0</span></p>
+        <p>Info : <span id="win_info">0</span>/<span id="win_max_info">0</span></p>
+        <p>Energy : <span id="win_energy">0</span>/<span id="win_max_energy">0</span></p>
+        <div class="win_btn">
+          <div class="restart" onclick="window.location.reload()">RESTART</div>
+          <div class="skip" onclick="skip_game()">SKIP</div>
+        </div>
+      </div>
       <div class="gameover hide">
         <div class="gameoverContent">
           <h1>GAME OVER</h1>
