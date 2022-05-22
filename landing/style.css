@@ -911,3 +911,11 @@ img#stars {
 #space_logo {
   width: 50%;
 }
+
+#text_date {
+  font-size: 1100%;
+  font-weight: 900;
+  position: absolute;
+  top: 8%;
+
+}
