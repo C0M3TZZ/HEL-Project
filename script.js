@@ -30,6 +30,7 @@ let statusUI = {
   posX: document.getElementById("posX"),
   posY: document.getElementById("posY"),
   energys: document.getElementById("energy"),
+  score: document.getElementById("score"),
 };
 
 let rover = {
@@ -52,9 +53,11 @@ let score = {
   },
   add: (value) => {
     score.value += value;
+    statusUI.score.innerText = score.value;
   },
   sub: (value) => {
     score.value -= value;
+    statusUI.score.innerText = score.value;
   }
 }
 
@@ -160,6 +163,7 @@ let trigger_alert_box = (text, timeout) => {
 
 function checkEvent() {
   let getEvent = eventArray.find((x) => x.posX == rover.x && x.posY == rover.y);
+  console.log(score.get());
   if (getEvent) {
     if (getEvent.type == "good" && !getEvent.isFinish) {
       toggleModal(getEvent);
@@ -343,6 +347,7 @@ async function sendCommands(commands = getCommands(), bypass = false) {
           trigger_gameover();
           return;
         }
+        //Win Condition Here plz
       }
     }, 1000 * commandMove);
     commandMove++;
