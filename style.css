@@ -156,7 +156,8 @@ img#stars {
 }
 
 .rocket img {
-  width: 120px;
+  width: 140px;
+  pointer-events: none;
 }
 
 .rocket[data-status="intro"] {
@@ -275,6 +276,92 @@ img#stars {
   /* opacity: 0; */
 }
 
+.rocket[data-status="step5"] .head,
+.rocket[data-status="inspecRover"] .head,
+.rocket[data-status="step6"] .head,
+.rocket[data-status="step7"] .head,
+.rocket[data-status="step8"] .head,
+.rocket[data-status="step9"] .head,
+.rocket[data-status="endcredit"] .head {
+  transform: translate(0, -50%);
+  opacity: 0;
+}
+
+.rocket[data-status="step5"] .rocketHead,
+.rocket[data-status="inspecRover"] .rocketHead,
+.rocket[data-status="step6"] .rocketHead,
+.rocket[data-status="step7"] .rocketHead,
+.rocket[data-status="step8"] .rocketHead,
+.rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="endcredit"] .rocketHead {
+  transform: translate(0, -25%);
+  /* opacity: 0; */
+}
+
+.rocket[data-status="inspecRover"] .rocketHead,
+.rocket[data-status="step6"] .rocketHead,
+.rocket[data-status="step7"] .rocketHead,
+.rocket[data-status="step8"] .rocketHead,
+.rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="endcredit"] .rocketHead {
+  transform: translate(0, -60%) scale(2,2);
+}
+
+.rocket[data-status="inspecRocket"] .fire,
+.rocket[data-status="step1"] .fire,
+.rocket[data-status="step2"] .fire,
+.rocket[data-status="step3"] .fire,
+.rocket[data-status="step4"] .fire,
+.rocket[data-status="step5"] .fire {
+  opacity: 0;
+}
+.rocket[data-status="inspecRover"] .fire,
+.rocket[data-status="step7"] .fire,
+.rocket[data-status="step8"] .fire,
+.rocket[data-status="step9"] .fire,
+.rocket[data-status="endcredit"] .fire {
+  transform: translate(0, -60%) scale(2,2);
+  opacity: 0;
+}
+
+.rocket[data-status="step6"] .fire {
+  transform: translate(0, -60%) scale(2,2);
+}
+
+.rocket[data-status="inspecRocket"] .parachute,
+.rocket[data-status="step1"] .parachute,
+.rocket[data-status="step2"] .parachute,
+.rocket[data-status="step3"] .parachute,
+.rocket[data-status="step4"] .parachute,
+.rocket[data-status="step5"] .parachute,
+.rocket[data-status="inspecRover"] .parachute,
+.rocket[data-status="step6"] .parachute {
+  opacity: 0;
+}
+
+.rocket[data-status="step7"] .parachute,
+.rocket[data-status="step8"] .parachute,
+.rocket[data-status="step9"] .parachute {
+  transform: scale(3,3);
+}
+
+.rocket[data-status="step7"] .rocketHead,
+.rocket[data-status="step8"] .rocketHead,
+.rocket[data-status="step9"] .rocketHead {
+  transform: translate(0, -20%) scale(2,2);
+}
+
+.rocket[data-status="step8"] .rocketHead,
+.rocket[data-status="step9"] .rocketHead {
+  transform: translate(0, -60%) scale(2,2);
+}
+
+.rocket[data-status="step8"] .parachute,
+.rocket[data-status="step9"] .parachute {
+  transform: translate(0, -80%) scale(3,3);
+  opacity: 0;
+}
+
 .rocketPart {
   position: absolute;
   top: 0;
@@ -284,14 +371,19 @@ img#stars {
 .t_r,
 .t_l,
 .c_r {
-  z-index: 5;
+  z-index: 6;
 }
 
 .c_l {
+  z-index: 5;
+}
+
+.body,
+.fire {
   z-index: 4;
 }
 
-.body {
+.rocketHead {
   z-index: 3;
 }
 
