@@ -108,7 +108,7 @@ let eventArray = [
   {
     name: "Microphone",
     desc: `When the Perseverance rover arrives at Mars, it will have two microphones. It will make it possible for our robots to not only touch and taste, but finally hear, the sounds of Mars.NASA spacecraft that traveled to Mars in the past have carried microphones twice. Unfortunately, one of those missions, the Mars Polar Lander, failed. The Phoenix Lander had a microphone on the spacecraft’s descent camera, but that instrument was never turned on.`,
-    imgPath: "./images/frog-like.jpg",
+    imgPath: "./images/micro.png",
     deco: "upgrade",
     type: "upgrade",
     isFinish: false,
@@ -118,7 +118,7 @@ let eventArray = [
   {
     name: "mast",
     desc: `When the Perseverance rover arrives at Mars, it will have two microphones. It will make it possible for our robots to not only touch and taste, but finally hear, the sounds of Mars.NASA spacecraft that traveled to Mars in the past have carried microphones twice. Unfortunately, one of those missions, the Mars Polar Lander, failed. The Phoenix Lander had a microphone on the spacecraft’s descent camera, but that instrument was never turned on.`,
-    imgPath: "./images/frog-like.jpg",
+    imgPath: "./images/mastcam.png",
     deco: "upgrade",
     type: "upgrade",
     isFinish: false,
@@ -128,7 +128,7 @@ let eventArray = [
   {
     name: "Robotic Arm",
     desc: `The 7-foot-long robotic arm on Perseverance can move a lot like yours. It has a shoulder, elbow and wrist "joints" for maximum flexibility. The arm lets the rover work as a human geologist would: by holding and using science tools with its "hand" or turret. The rover's own "hand tools" extract cores from rocks, takes microscopic images and analyzes the elemental composition and mineral makeup of Martian rocks and soil.`,
-    imgPath: "./images/frog-like.jpg",
+    imgPath: "./images/reboarm.png",
     deco: "upgrade",
     type: "upgrade",
     isFinish: false,
@@ -138,7 +138,7 @@ let eventArray = [
   {
     name: "Power supply",
     desc: `The Perseverance rover requires electrical power to operate. Without power, the rover cannot move, use its science instruments, or communicate with Earth.Perseverance carries a radioisotope power system. This power system produces a dependable flow of electricity using the heat of plutonium's radioactive decay as its "fuel."`,
-    imgPath: "./images/frog-like.jpg",
+    imgPath: "./images/bat.png",
     deco: "upgrade",
     type: "upgrade",
     isFinish: false,
@@ -148,7 +148,7 @@ let eventArray = [
   {
     name: "wheel",
     desc: `The Perseverance rover has six wheels, each with its own individual motor. The two front and two rear wheels also have individual steering motors. This steering capability allows the vehicle to turn in place, a full 360 degrees. The four-wheel steering also allows the rover to swerve and curve, making arcing turns.`,
-    imgPath: "./images/frog-like.jpg",
+    imgPath: "./images/wheel.png",
     deco: "upgrade",
     type: "upgrade",
     isFinish: false,
@@ -158,7 +158,7 @@ let eventArray = [
   {
     name: "Mastcam-Z",
     desc: `The Mastcam-Z is the name of the mast-mounted camera system that is equipped with a zoom function on the Perseverance rover. Mastcam-Z has cameras that can zoom in, focus, and take 3D pictures and video at high speed to allow detailed examination of distant objects.it fucntion is To take high-definition video, panoramic color and 3D images of the Martian surface and features in the atmosphere with a zoom lens to magnify distant targets`,
-    imgPath: "./images/frog-like.jpg",
+    imgPath: "./images/mastcam.png",
     deco: "upgrade",
     type: "upgrade",
     isFinish: false,
@@ -168,7 +168,7 @@ let eventArray = [
   {
     name: "UHF",
     desc: `Ultra-High Frequency Antenna Most often, Mars 2020 uses its ultra-high frequency (UHF) antenna (about 400 megahertz) to communicate with Earth through NASA's orbiters around Mars. Because the rover and orbiter antennas are within close range of each other, they act a little like walkie-talkies compared to the long-range telecommunications with Earth provided by the low-gain and high-gain antennas. It generally takes about 5 to 20 minutes for a radio signal to travel the distance between Mars and Earth, depending on planet positions. Using orbiters to relay messages is beneficial because they are much closer to Perseverance than the Deep Space Network (DSN) antennas on Earth. The mass- and power-constrained rover can achieve high data rates of up to 2 megabits per second on the relatively short-distance relay link to the orbiters overhead. The orbiters then use their much larger antennas and transmitters to relay that data on the long-distance link back to Earth.Tech Specs Main Job	Transmitting Data to Earth through Mars Orbiters Radio Frequency	Ultra-High Frequency (UHF) band (about 400 megahertz) Transmission Rates	Up to 2 megabits per second on the rover-to-orbiter relay link.`,
-    imgPath: "./images/frog-like.jpg",
+    imgPath: "./images/UHF.png",
     deco: "upgrade",
     type: "upgrade",
     isFinish: false,
