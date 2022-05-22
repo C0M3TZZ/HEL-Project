@@ -779,7 +779,62 @@ img#stars {
   visibility: visible;
 }
 /* ---------------------------- */
+.context_head{
+  position: absolute;
+  top:0%;
+  left: 400%;
+  width: 50vh;
+  color: whitesmoke;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
 
+.context_head h1::after{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  transition: all 0.5s;
+}
+
+.area_head:hover .context_head h1::after{
+  width: 100%;
+}
+.area_head:hover .context_head h1::before{
+  width: 60%;
+}
+
+.context_head h1::before{
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: whitesmoke;
+  position: absolute;
+  bottom: 0%;
+  left: 100%;
+  transition: all 0.5s;
+  transform: rotate(-70deg);
+  transform-origin: bottom left;
+}
+
+.rocket .head .area_head{
+  width: 65px;
+  height: 210px;
+  right: 25%;
+  position: absolute;
+  bottom: 20%;
+  z-index: 20;
+}
+
+.rocket .head .area_head:hover .context_head{
+  opacity: 1;
+  visibility: visible;
+}
+/* ---------------------------- */
 
 @keyframes slip {
   from {transform: translate(0, 1000px)}
