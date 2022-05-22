@@ -32,7 +32,25 @@ let statusUI = {
   energys: document.getElementById("energy"),
   score: document.getElementById("score"),
   tutor: document.querySelector(".tutor"),
+  intro: document.querySelector(".intro"),
 };
+
+let vid = document.getElementById("vid");
+setTimeout(() => {
+  if (vid.paused) {
+    vid.play();
+  }
+},2000)
+vid.addEventListener("ended", function () {
+  skip_intro();
+});
+
+let skip_intro = () => {
+  statusUI.intro.classList.add("hide");
+  setTimeout(() => {
+    statusUI.intro.remove();
+  },1000);
+}
 
 let close_tutor = () => {
   statusUI.tutor.classList.add("hide");
@@ -237,7 +255,6 @@ let eventArray = [
     },
   },
   {
-<<<<<<< Updated upstream
     name: "we found some cute cat on mars so we decided to pet them go 1 tiles forward turn right and go another 1 tiles forward",
     deco: "bad",
     type: "bad",
@@ -250,7 +267,6 @@ let eventArray = [
   {
     name: "You have a dance battle with dance king on mars go 3 tiles forward and 4 tiles backward and lost 4 energy",
     deco: "bad",
-=======
     name: "New discovery! you found water on mars",
     imgPath: "./images/water.png",
     deco: "good",
@@ -303,12 +319,10 @@ let eventArray = [
     name: "The preserverance have fallen into mars crater",
     desc: 'if you have power supply upgrade you will not lost energy if not you will lost 5 energy',
     deco: "half",
->>>>>>> Stashed changes
     type: "bad",
     isFinish: false,
     timeout: 5000,
     exec: () => {
-<<<<<<< Updated upstream
       sendCommands(["forward", "forward", "forward", "backward", "backward", "backward", "backward"], true);
       enegry.sub(4);
     },
@@ -316,32 +330,28 @@ let eventArray = [
   {
     name: "Our engineer misinput! turn left and go 2 tiles forward",
     deco: "bad",
-=======
+    exec: () => {
       if (backpack.checkIfHave("Power supply")) {
         score.add(200);
       }else{
         enegry.sub(5);
       };
     },
-  },
+    },
   {
     name: "The preserverance are running through the rocky surface of mars",
     desc: 'if you have wheel upgrade gain 200 points if not lost 4 energy',
     deco: "half",
->>>>>>> Stashed changes
     type: "bad",
     isFinish: false,
     timeout: 5000,
     exec: () => {
-<<<<<<< Updated upstream
       sendCommands(["left", "forward", "forward"], true);
-=======
       if (backpack.checkIfHave("wheel upgrade")) {
         score.add(180);
       }else{
         enegry.sub(4);
       };
->>>>>>> Stashed changes
     },
   },
 ];

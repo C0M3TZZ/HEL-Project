@@ -776,3 +776,43 @@ body {
 .skip:hover{
     transform: scale(1.1);
 }
+
+.intro{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    z-index: 60;
+    color: white;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.intro video{
+    width: 100%;
+    height: 100%;
+}
+
+.skip_intro{
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    background-color: #477feb;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    z-index: 61;
+}
+
+.tutor_panel img{
+    width: 100%;
+}
