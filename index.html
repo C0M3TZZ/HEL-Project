@@ -11,6 +11,7 @@
   <body>
     <div class="container">
       <div class="tutor">
+        <div class="tutor_bg" onclick="close_tutor()"></div>
         <div class="tutor_panel">
           <div class="close_tutor" onclick="close_tutor()">
             <img src="./images/multiply.png">
@@ -100,7 +101,7 @@ seem fun huh?! let’s take a look at the game!!</p>
           </div>
         </div>
         <div class="clearMoveset" onclick="clearMoveset()">
-          <img src="./images/clear.png">
+          <img style="width: 100%;" src="./images/trash-bin.png">
         </div>
         <div class="commandPanel"></div>
       </div>
@@ -123,8 +124,8 @@ seem fun huh?! let’s take a look at the game!!</p>
           </div>
         </div>
         <div class="btn_moveset">
-          <div class="boxSend">
-            <div class="btnSend fontBiggerplz" onclick="sendCommands()">📡</div>
+          <div class="boxSend fontBiggerplz" onclick="sendCommands()">
+            <div class="btnSend">📡</div>
           </div>
         </div>
         <div class="statusPanel">
