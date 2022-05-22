@@ -199,6 +199,7 @@ img#stars {
 .rocket[data-status="step8"] .t_r,
 .rocket[data-status="step9"] .t_r,
 .rocket[data-status="step10"] .t_r,
+.rocket[data-status="endCredit"] .t_r,
 .rocket[data-status="endcredit"] .t_r {
   transform: translate(30%, -50%) rotate(-45deg);
   opacity: 0;
@@ -215,6 +216,7 @@ img#stars {
 .rocket[data-status="step8"] .t_l,
 .rocket[data-status="step9"] .t_l,
 .rocket[data-status="step10"] .t_l,
+.rocket[data-status="endCredit"] .t_l,
 .rocket[data-status="endcredit"] .t_l {
   transform: translate(-30%, -50%) rotate(45deg);
   opacity: 0;
@@ -230,6 +232,7 @@ img#stars {
 .rocket[data-status="step8"] .c_r,
 .rocket[data-status="step9"] .c_r,
 .rocket[data-status="step10"] .c_r,
+.rocket[data-status="endCredit"] .c_r,
 .rocket[data-status="endcredit"] .c_r {
   transform: translate(-30%, -50%) rotate(45deg);
   opacity: 0;
@@ -245,6 +248,7 @@ img#stars {
 .rocket[data-status="step8"] .c_l,
 .rocket[data-status="step9"] .c_l,
 .rocket[data-status="step10"] .c_l,
+.rocket[data-status="endCredit"] .c_l,
 .rocket[data-status="endcredit"] .c_l {
   transform: translate(30%, -50%) rotate(-45deg);
   opacity: 0;
@@ -259,6 +263,7 @@ img#stars {
 .rocket[data-status="step8"] .body,
 .rocket[data-status="step9"] .body,
 .rocket[data-status="step10"] .body,
+.rocket[data-status="endCredit"] .body,
 .rocket[data-status="endcredit"] .body {
   transform: translate(0, -20%);
   /* opacity: 0; */
@@ -272,6 +277,7 @@ img#stars {
 .rocket[data-status="step8"] .body,
 .rocket[data-status="step9"] .body,
 .rocket[data-status="step10"] .body,
+.rocket[data-status="endCredit"] .body,
 .rocket[data-status="endcredit"] .body {
   transform: translate(0, -50%);
   opacity: 0;
@@ -285,6 +291,7 @@ img#stars {
 .rocket[data-status="step8"] .head,
 .rocket[data-status="step9"] .head,
 .rocket[data-status="step10"] .head,
+.rocket[data-status="endCredit"] .head,
 .rocket[data-status="endcredit"] .head {
   transform: translate(0, -25%);
   /* opacity: 0; */
@@ -297,6 +304,7 @@ img#stars {
 .rocket[data-status="step8"] .head,
 .rocket[data-status="step9"] .head,
 .rocket[data-status="step10"] .head,
+.rocket[data-status="endCredit"] .head,
 .rocket[data-status="endcredit"] .head {
   transform: translate(0, -50%);
   opacity: 0;
@@ -309,6 +317,7 @@ img#stars {
 .rocket[data-status="step8"] .rocketHead,
 .rocket[data-status="step9"] .rocketHead,
 .rocket[data-status="step10"] .rocketHead,
+.rocket[data-status="endCredit"] .rocketHead,
 .rocket[data-status="endcredit"] .rocketHead {
   transform: translate(0, -25%);
   /* opacity: 0; */
@@ -320,6 +329,7 @@ img#stars {
 .rocket[data-status="step8"] .rocketHead,
 .rocket[data-status="step9"] .rocketHead,
 .rocket[data-status="step10"] .rocketHead,
+.rocket[data-status="endCredit"] .rocketHead,
 .rocket[data-status="endcredit"] .rocketHead {
   transform: translate(0, -60%) scale(2,2);
 }
@@ -338,6 +348,7 @@ img#stars {
 .rocket[data-status="step8"] .fire,
 .rocket[data-status="step9"] .fire,
 .rocket[data-status="step10"] .fire,
+.rocket[data-status="endCredit"] .fire,
 .rocket[data-status="endcredit"] .fire,
 .rocket[data-status="inspecRocket_hover"] .fire {
   transform: translate(0, -60%) scale(2,2);
@@ -367,6 +378,7 @@ img#stars {
 .rocket[data-status="step8"] .parachute,
 .rocket[data-status="step9"] .parachute,
 .rocket[data-status="step10"] .parachute,
+.rocket[data-status="endCredit"] .parachute,
 .rocket[data-status="endcredit"] .parachute {
   transform: translate(0, -100%) scale(3,3);
   opacity: 0;
@@ -378,6 +390,7 @@ img#stars {
 
 .rocket[data-status="step8"] .rocketHead,
 .rocket[data-status="step9"] .rocketHead,
+.rocket[data-status="endCredit"] .rocketHead,
 .rocket[data-status="step10"] .rocketHead {
   transform: translate(0, -100%) scale(2,2);
   opacity: 0;
@@ -413,6 +426,7 @@ img#stars {
 
 .rocket[data-status="step9"] .topPartRover,
 .rocket[data-status="step10"] .topPartRover,
+.rocket[data-status="endCredit"] .topPartRover,
 .rocket[data-status="inspecRocket_hover"] .topPartRover {
   transform: translate(0, -30%) scale(2,2);
   opacity: 0;
@@ -423,6 +437,7 @@ img#stars {
 }
 
 .rocket[data-status="step10"] .bottomPartRover,
+.rocket[data-status="endCredit"] .bottomPartRover,
 .rocket[data-status="inspecRocket_hover"] .bottomPartRover {
   transform: translate(0, -80%) scale(2,2);
   opacity: 0;
@@ -439,6 +454,8 @@ img#stars {
 .rocket[data-status="step7"] .rover,
 .rocket[data-status="step8"] .rover,
 .rocket[data-status="step9"] .rover,
+.rocket[data-status="step9"] .rover,
+.rocket[data-status="endCredit"] .rover,
 .rocket[data-status="inspecRocket_hover"] .rover {
   transform: translate(0, 200%) scale(2,2);
   opacity: 0;
@@ -812,7 +829,6 @@ img#stars {
   position: absolute;
   bottom: 20%;
   z-index: 20;
-  background-color: #ae6b50;
 }
 
 /* ---------------------------- */
