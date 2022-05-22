@@ -45,21 +45,37 @@ let panelRes = {
   height: Math.floor(panel.clientHeight / rover.element.clientHeight) - 1,
 };
 
-let enegryValue = 140;
-let enegry = {
+let score = {
+  value: 0,
+  get: () => {
+    return score.value;
+  },
   add: (value) => {
-    enegryValue += value;
-    if (enegryValue > 140) {
-      enegryValue = 140;
-    }
-    statusUI.energys.innerHTML = `Energy : ${enegryValue}`;
+    score.value += value;
   },
   sub: (value) => {
-    enegryValue -= value;
-    if (enegryValue < 0) {
-      enegryValue = 0;
+    score.value -= value;
+  }
+}
+
+let enegry = {
+  value: 100,
+  get: () => {
+    return enegry.value;
+  },
+  add: (value) => {
+    enegry.value += value;
+    if (enegry.value > 140) {
+      enegry.value = 140;
     }
-    statusUI.energys.innerHTML = `Energy : ${enegryValue}`;
+    statusUI.energys.innerHTML = `Energy : ${enegry.value}`;
+  },
+  sub: (value) => {
+    enegry.value -= value;
+    if (enegry.value < 0) {
+      enegry.value = 0;
+    }
+    statusUI.energys.innerHTML = `Energy : ${enegry.value}`;
   },
 };
 let eventArray = [
@@ -71,6 +87,7 @@ let eventArray = [
     posY: 2,
     type: "good",
     isFinish: false,
+    score: 10,
   },
   {
     name: "หินรูปกบ",
@@ -86,6 +103,7 @@ let eventArray = [
     posY: 2,
     type: "good",
     isFinish: false,
+    score: 10,
   },
   {
     name: "Kuy Q Yai Lek",
@@ -123,6 +141,9 @@ function checkEvent() {
   if (getEvent) {
     if (getEvent.type == "good" && !getEvent.isFinish) {
       toggleModal(getEvent);
+      score.add(getEvent.score);
+      console.log(score.get());
+      // score.get();
       getEvent.isFinish = true;
     }
     if (getEvent.type == "bad" && !getEvent.isFinish) {
@@ -292,7 +313,7 @@ async function sendCommands(commands = getCommands(), bypass = false) {
       }
       if (bypass == false) {
         enegry.sub(1);
-        if (enegryValue <= 0) {
+        if (enegry.value <= 0) {
           trigger_gameover();
           return;
         }
