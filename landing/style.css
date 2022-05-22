@@ -644,6 +644,14 @@ img#stars {
   z-index: 10;
 }
 
+.textstep6 {
+  width: 50vh;
+  color: whitesmoke;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
 .context{
   position: absolute;
   top: 0;
