@@ -31,7 +31,12 @@ let statusUI = {
   posY: document.getElementById("posY"),
   energys: document.getElementById("energy"),
   score: document.getElementById("score"),
+  tutor: document.querySelector(".tutor"),
 };
+
+let close_tutor = () => {
+  statusUI.tutor.classList.add("hide");
+}
 
 let rover = {
   element: document.querySelector(".rover"),
@@ -81,6 +86,7 @@ let enegry = {
     statusUI.energys.innerHTML = `Energy : ${enegry.value}`;
   },
 };
+
 
 let backpack = {
   items: [],
@@ -156,6 +162,29 @@ let eventArray = [
     },
   },
 ];
+
+let coreGame = {
+  getUpgradeComponent: eventArray.filter((item) => {
+    return item.type === "upgrade";
+  }),
+}
+
+let winHandler = {
+  element: document.querySelector(".win"),
+  score: document.getElementById("win_score"),
+  info: document.getElementById("win_info"),
+  max_info: document.getElementById("win_max_info"),
+  energy: document.getElementById("win_energy"),
+  max_energy: document.getElementById("win_max_energy"),
+  trigger: () => {
+    winHandler.element.classList.remove("hide");
+    winHandler.score.innerText = score.value;
+    winHandler.energy.innerText = enegry.value;
+    winHandler.max_energy.innerText = 100;
+    winHandler.info.innerText = eventArray.filter((ele) => {return ele.type == "good" && ele.isFinish}).length;
+    winHandler.max_info.innerText = eventArray.filter((ele) => {return ele.type == "good"}).length;
+  }
+}
 
 let renderEvent = () => {
   for (let index = 0; index < eventArray.length; index++) {
@@ -400,6 +429,9 @@ async function sendCommands(commands = getCommands(), bypass = false) {
     //ปรับให้หุ่นเป็นสถานะว่าง
     rover.element.dataset.mission = "off";
     checkEvent();
+    if(coreGame.getUpgradeComponent.length == backpack.get().length){
+      winHandler.trigger();
+    }
   }, commands.length * 1000);
   await commands.forEach((command) => {
     //สั่งหุ่นทำงาน
@@ -426,7 +458,6 @@ async function sendCommands(commands = getCommands(), bypass = false) {
           trigger_gameover();
           return;
         }
-        //Win Condition Here plz
       }
     }, 1000 * commandMove);
     commandMove++;

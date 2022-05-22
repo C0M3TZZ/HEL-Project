@@ -68,7 +68,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+    z-index: 21;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -447,7 +447,7 @@ body {
     top: 1%;
     right: 1%;
     transition: all 1s;
-    z-index: 3;
+    z-index: 20;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -467,7 +467,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 20;
     transition: all 0.5s;
     display: flex;
     justify-content: center;
@@ -534,6 +534,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s;
 }
 
 .items{
@@ -545,6 +546,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s;
 }
 
 .skip{
@@ -555,6 +557,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.5s;
 }
 
 .inv_items{
@@ -646,4 +649,91 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.win{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    z-index: 20;
+    color: white;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.win_content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.win_btn{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.tutor{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    z-index: 40;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.tutor_panel{
+    width: 75%;
+    height: 75%;
+    background-color: whitesmoke;
+    border-radius: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    padding: 1vw;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.close_tutor{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 5rem;
+    height: 5rem;
+    background-color: #fff;
+    border-radius: 2.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.restart:hover{
+    transform: scale(1.1);
+}
+
+.items:hover{
+    transform: scale(1.1);
+}
+
+.skip:hover{
+    transform: scale(1.1);
 }
