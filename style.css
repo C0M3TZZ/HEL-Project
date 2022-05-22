@@ -110,12 +110,18 @@ body {
     /* หุ่นยนต์ */
     width: 10vh;
     height: 10vh;
-    background-color: black;
     position: absolute;
     top: 0;
     left: 0;
     transition: all 1s;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rover img {
+    width: 180%;
 }
 
 .eventShadow{
@@ -244,16 +250,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.headdir {
-    /* [DEV] ที่บอกทิศของหุ่น */
-    width: 5%;
-    height: 100%;
-    background-color: red;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .boxSend {
