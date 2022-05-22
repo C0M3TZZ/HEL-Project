@@ -12,23 +12,26 @@
     <div class="container">
       <div class="gameover hide">
         <div class="gameoverContent">
-          <h1>Game Over</h1>
-          <div class="restart_go" onclick="window.location.reload()"></div>
-          <div class="skip_go" onclick="skip_game()"></div>
+          <h1>GAME OVER</h1>
+          <div class="restart_go" onclick="window.location.reload()">RESTART</div>
+          <div class="skip_go" onclick="skip_game()">SKIP</div>
         </div>
       </div>
       <div class="menu_btn" onclick="menu_toggle()">
+        <img src="./images/menuIcon.png">
       </div>
       <div class="menu hide">
         <div class="focus" onclick="menu_toggle()"></div>
         <div class="menu_panel">
           <div class="mainmenu">
-            <div class="restart" onclick="window.location.reload()"></div>
-            <div class="items" onclick="load_Inv(true)"></div>
-            <div class="skip" onclick="skip_game()"></div>
+            <div class="restart" onclick="window.location.reload()">RESTART</div>
+            <div class="items" onclick="load_Inv(true)">ITEMS</div>
+            <div class="skip" onclick="skip_game()">SKIP</div>
           </div>
           <div class="inv close_inv">
-            <div class="close_draw" onclick="load_Inv(false)"></div>
+            <div class="close_draw" onclick="load_Inv(false)">
+              <img src="./images/multiply.png">
+            </div>
             <div class="inv_panel">
             </div>
           </div>
@@ -65,34 +68,51 @@
           <div class="headdir"></div>
         </div>
       </div>
+
       <div class="toolbar">
-        <div class="scorePanel"></div>
+        <div class="boxScore">
+          <div class="scorePanel">
+            <div class="textScore">
+              <h1>SCORE</h1>
+              <p id="score">00</p>
+            </div>
+          </div>
+        </div>
         <div class="clearMoveset" onclick="clearMoveset()"></div>
         <div class="commandPanel"></div>
       </div>
+
       <div class="movesetbar">
         <div class="moveset">
-          <div class="turnleft fontBiggerplz" onclick="addComand('left')">
-            ⬅️
-          </div>
-          <div class="forward fontBiggerplz" onclick="addComand('forward')">
-            ⬆️
-          </div>
-          <div class="backward fontBiggerplz" onclick="addComand('backward')">
-            ⬇️
-          </div>
-          <div class="turnright fontBiggerplz" onclick="addComand('right')">
-            ➡️
+          <div class="boxMoveset">
+            <div class="turnleft fontBiggerplz" onclick="addComand('left')">
+              <img src="./images/turnleft.png">
+            </div>
+            <div class="forward fontBiggerplz" onclick="addComand('forward')">
+              <img src="./images/forward.png">
+            </div>
+            <div class="backward fontBiggerplz" onclick="addComand('backward')">
+              <img src="./images/backward.png">
+            </div>
+            <div class="turnright fontBiggerplz" onclick="addComand('right')">
+              <img src="./images/turnright.png">
+            </div>
           </div>
         </div>
         <div class="btn_moveset">
-          <div class="btnSend fontBiggerplz" onclick="sendCommands()">📡</div>
+          <div class="boxSend">
+            <div class="btnSend fontBiggerplz" onclick="sendCommands()">📡</div>
+          </div>
         </div>
         <div class="statusPanel">
-          <h1>Status</h1>
-          <p id="posX">X : 0</p>
-          <p id="posY">Y : 0</p>
-          <p id="energy">Energy : 140</p>
+          <div class="boxStatus">
+            <div class="textStatus">
+              <h1>STATUS</h1>
+              <p id="posX">X : 0</p>
+              <p id="posY">Y : 0</p>
+              <p id="energy">Energy : 140</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -99,7 +99,7 @@ body {
     /* หน้าจอหลักของเกม */
     width: 75vw;
     height: 75vh;
-    background-color: pink;
+    background-color: #c68840;
     position: relative;
     top: 0;
     left: 0;
@@ -121,7 +121,7 @@ body {
 .eventShadow{
     width: 10vh;
     height: 10vh;
-    background-color: yellow;
+    background-color: #99662a;
     position: absolute;
     top: 0;
     left: 0;
@@ -131,10 +131,14 @@ body {
     /* แถบแนวตั้ง */
     width: 25vw;
     height: 100vh;
-    background-color: red;
+    background-color: #8f8f8f;
     position: absolute;
     top: 0;
     right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .movesetbar {
@@ -158,62 +162,85 @@ body {
     /* ปุ่มกดคำสั่ง */
     height: 100%;
     width: 60%;
-    background-color: aquamarine;
+    background-color: #8f8f8f;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
+.boxMoveset {
+    height: 85%;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    background-color: #c4c4c4;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.boxMoveset img {
+    height: 100%;
+}
+
 .forward {
     /* ปุ่มกดคำสั่ง-เดินหน้า */
     width: 10rem;
     height: 10rem;
-    background-color: green;
+    background-color: #f2f2f2;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem;
+    border-radius: 30px;
+    border: 4px solid black;
 }
 
 .backward {
     /* ปุ่มกดคำสั่ง-ถอยหลัง */
     width: 10rem;
     height: 10rem;
-    background-color: green;
+    background-color: #f2f2f2;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem;
+    border-radius: 30px;
+    border: 4px solid black;
 }
 
 .turnleft {
     /* ปุ่มกดคำสั่ง-หมุนซ้าย */
     width: 10rem;
     height: 10rem;
-    background-color: green;
+    background-color: #f2f2f2;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem;
+    border-radius: 30px;
+    border: 4px solid black;
 }
 
 .turnright {
     /* ปุ่มกดคำสั่ง-หมุนขวา */
     width: 10rem;
     height: 10rem;
-    background-color: green;
+    background-color: #f2f2f2;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 1rem;
+    border-radius: 30px;
+    border: 4px solid black;
 }
 
 .btn_moveset {
     /* ปุ่มกดคำสั่ง-กดปุ่มSend */
     width: 20%;
     height: 100%;
-    background-color: black;
+    background-color: #8f8f8f;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,14 +256,25 @@ body {
     right: 0;
 }
 
-.btnSend {
-    /* ปุ่มกดคำสั่ง-กดปุ่มSend */
-    width: 90%;
-    height: 90%;
-    background-color: gray;
+.boxSend {
+    width: 85%;
+    height: 85%;
+    background-color: #c4c4c4;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 30px;
+}
+
+.btnSend {
+    /* ปุ่มกดคำสั่ง-กดปุ่มSend */
+    width: 60%;
+    height: 60%;
+    background-color: #477feb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .cmdItems {
@@ -246,34 +284,99 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aquamarine;
+    background-color: #232323;
     margin: 5%;
+    border-radius: 30px;
+    color: #148f00;
+    font-size: 24px;
 }
 
 .statusPanel {
     /* กล่องสถานะ */
     width: 20%;
     height: 100%;
-    background-color: lemonchiffon;
+    background-color: #8f8f8f;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.scorePanel {
-    /* กล่องคะแนน */
+.boxStatus {
+    width: 85%;
+    height: 85%;
+    background-color: #c4c4c4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.textStatus {
+    width: 85%;
+    height: 85%;
+    background-color: #232323;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.textStatus h1 {
+    color: #148f00;
+    letter-spacing: 5px;
+}
+
+.textStatus p {
+    color: #fff;
+}
+
+.boxScore {
     width: 100%;
     height: 25%;
-    background-color: yellow;
+    background-color: #8f8f8f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.scorePanel {
+    /* กล่องคะแนน */
+    width: 90%;
+    height: 85%;
+    background-color: #c4c4c4;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textScore {
+    width: 90%;
+    height: 85%;
+    background-color: #232323;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textScore h1 {
+    color: #148f00;
+    letter-spacing: 10px;
 }
 
 .commandPanel {
     /* กล่องคำสั่ง */
-    width: 100%;
-    height: 75%;
-    background-color: green;
+    width: 90%;
+    height: 72%;
+    background-color: #c4c4c4;
     overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 30px;
 }
 
 .alert_box{
@@ -303,12 +406,14 @@ body {
 .menu_btn{
     width: 10vh;
     height: 10vh;
-    background-color: black;
     position: absolute;
     top: 1%;
     right: 1%;
     transition: all 1s;
     z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .focus{
@@ -351,6 +456,9 @@ body {
     justify-content: center;
     z-index: 4;
     transition: all 0.5s;
+    font-size: 32px;
+    letter-spacing: 5px;
+    color: #fff;
 }
 
 .drawer_mainmenu{
@@ -358,14 +466,15 @@ body {
 }
 
 .close_draw{
-    width: 10%;
+    width: 5%;
     height: 10%;
-    background-color: black;
     position: absolute;
     top: 3%;
     left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .inv{
     width: 100%;
@@ -382,25 +491,43 @@ body {
 .restart{
     width: 20%;
     height: 20%;
-    background-color: red;
+    background-color: #eb4747;
+    border-radius: 30px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .items{
     width: 20%;
     height: 20%;
-    background-color: blue;
+    background-color: #47a037;
+    border-radius: 30px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .skip{
     width: 20%;
     height: 20%;
-    background-color: green;
+    background-color: #477feb;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .inv_items{
     width: 20%;
     height: 20%;
-    background-color: yellow;
+    background-color: #232323;
+    color: #148f00;
+    border-radius: 30px;
+    font-size: 32px;
+    letter-spacing: 5px;
     margin: 1%;
     display: flex;
     align-items: center;
@@ -431,16 +558,37 @@ body {
     transition: all 0.5s;
 }
 
+.gameover h1 {
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-bottom: 50px;
+}
+
+.gameoverContent {
+    font-size: 32px;
+    color: #fff;
+    letter-spacing: 5px;
+}
+
 .restart_go{
     width: 20%;
     height: 20%;
-    background-color: red;
+    background-color: #eb4747;
+    margin-bottom: 50px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .skip_go{
     width: 20%;
     height: 20%;
-    background-color: green;
+    background-color: #477feb;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gameoverContent{
