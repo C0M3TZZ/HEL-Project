@@ -132,10 +132,18 @@ img#stars {
 }
 
 #text {
-  font-size: 1800%;
+  position: absolute;
+  font-size: 1200%;
   font-weight: 900;
-  margin: 0%;
-  margin-top: 8%;
+  top: 8%;
+  left: 7%;
+  animation: text 3s infinite linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes text{
+  from {top: -150%;}
+  to {top: 8%;}
 }
 
 .rocket {
