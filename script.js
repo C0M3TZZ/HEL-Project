@@ -8,7 +8,7 @@ let alert_box = {
 let gameover = document.querySelector(".gameover");
 let trigger_gameover = () => {
   gameover.classList.remove("hide");
-}
+};
 
 let menu = {
   element: document.querySelector(".menu"),
@@ -17,19 +17,20 @@ let menu = {
   inv_items: document.querySelector(".inv_items"),
   inv_panel: document.querySelector(".inv_panel"),
   btn: document.querySelector(".menu_btn"),
-}
+};
 
 let menu_toggle = () => {
   menu.element.classList.toggle("hide");
   menu.inv.classList.add("close_inv");
   menu.mainmenu.classList.remove("drawer_mainmenu");
   load_Inv(false);
-}
+};
 
 let statusUI = {
   posX: document.getElementById("posX"),
   posY: document.getElementById("posY"),
   energys: document.getElementById("energy"),
+  score: document.getElementById("score"),
 };
 
 let rover = {
@@ -52,11 +53,13 @@ let score = {
   },
   add: (value) => {
     score.value += value;
+    statusUI.score.innerText = score.value;
   },
   sub: (value) => {
     score.value -= value;
-  }
-}
+    statusUI.score.innerText = score.value;
+  },
+};
 
 let enegry = {
   value: 100,
@@ -92,22 +95,34 @@ let backpack = {
   },
   get: () => {
     return backpack.items;
-  }
-}
+  },
+};
 
 let eventArray = [
   {
     name: "TEST Subject",
     desc: ``,
     imgPath: "./images/frog-like.jpg",
+    deco: "half",
     posX: 1,
     posY: 2,
     type: "good",
     isFinish: false,
     score: 10,
-    addUpgrade: "test",
     checkSpecial: null,
     extraPoint: 0,
+  },
+  {
+    name: "TEST Upgrade",
+    desc: ``,
+    imgPath: "./images/frog-like.jpg",
+    deco: "upgrade",
+    posX: 2,
+    posY: 2,
+    type: "upgrade",
+    isFinish: false,
+    itemId: "test",
+    score: 10,
   },
   {
     name: "หินรูปกบ",
@@ -119,35 +134,56 @@ let eventArray = [
   Images like these are what make robots like Perseverance so important. Anyone reading this article is highly unlikely to set foot on Mars in their lifetime. That fact may be disappointing to some, but these photos help a little.
   We can sit back on Earth, not worry about the harsh reality of actually being on Mars, and still experience the planet as if we were there.`,
     imgPath: "./images/frog-like.jpg",
+    deco: "good",
     posX: 0,
     posY: 2,
     type: "good",
     isFinish: false,
     score: 10,
-    addUpgrade: null,
     checkSpecial: "test",
     extraPoint: 100,
   },
   {
     name: "Kuy Q Yai Lek",
+    deco: "bad",
     posX: 2,
     posY: 0,
     type: "bad",
     isFinish: false,
+    timeout: 2000,
     exec: () => {
       sendCommands(["backward", "backward", "backward"], true);
     },
   },
 ];
 
-for (let index = 0; index < eventArray.length; index++) {
-  const element = eventArray[index];
-  let eventElement = document.createElement("div");
-  eventElement.classList.add("eventShadow");
-  eventElement.style.top = element.posY + "0vh";
-  eventElement.style.left = element.posX + "0vh";
-  element.ele = eventElement;
-  panel.appendChild(eventElement);
+let renderEvent = () => {
+  for (let index = 0; index < eventArray.length; index++) {
+    const element = eventArray[index];
+    let eventElement = document.createElement("div");
+    switch (element.deco) {
+      case "good":
+        eventElement.classList.add("goodE");
+        break;
+      case "bad":
+        eventElement.classList.add("badE");
+        break;
+      case "half":
+        eventElement.classList.add("halfE");
+        break;
+      case "upgrade":
+        eventElement.classList.add("upE");
+        break;
+      default:
+        break;
+    }
+    eventElement.classList.add("hideE");
+    eventElement.classList.add("eventShadow");
+    eventElement.style.top = element.posY + "0vh";
+    eventElement.style.left = element.posX + "0vh";
+    element.ele = eventElement;
+    panel.appendChild(eventElement);
+  }
 }
 
 let trigger_alert_box = (text, timeout) => {
@@ -158,22 +194,64 @@ let trigger_alert_box = (text, timeout) => {
   }, timeout);
 };
 
+let scanEvent = () => {
+  let nearby = eventArray.filter((ele) => {
+    return (
+      Math.abs(ele.posX - rover.x) <= 1 && Math.abs(ele.posY - rover.y) <= 1
+    );
+  });
+  if (nearby.length) {
+    nearby.forEach((element) => {
+      element.ele.classList.remove("hideE");
+    });
+  }
+};
+
+let randomNumberMinMax = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+let randomEvent = async () => {
+  await eventArray.forEach((element) => {
+    let posX = randomNumberMinMax(2, panelRes.width);
+    let posY = randomNumberMinMax(2, panelRes.height);
+    while (
+      eventArray.find((ele) => {
+        return ele.posX == posX && ele.posY == posY;
+      })
+    ) {
+      posX = randomNumberMinMax(2, panelRes.width);
+      posY = randomNumberMinMax(2, panelRes.height);
+    }
+    element.posX = posX;
+    element.posY = posY;
+    console.log(`X : ${posX} Y : ${posY}`);
+  });
+  renderEvent();
+};
+randomEvent();
 function checkEvent() {
   let getEvent = eventArray.find((x) => x.posX == rover.x && x.posY == rover.y);
+  scanEvent();
   if (getEvent) {
     if (getEvent.type == "good" && !getEvent.isFinish) {
       toggleModal(getEvent);
       score.add(getEvent.score);
-      if (getEvent.addUpgrade != null) {
-        backpack.add(getEvent.addUpgrade);
-      }
-      if (getEvent.checkSpecial != null && backpack.checkIfHave(getEvent.checkSpecial)) {
+      if (
+        getEvent.checkSpecial != null &&
+        backpack.checkIfHave(getEvent.checkSpecial)
+      ) {
         score.add(getEvent.extraPoint);
       }
       getEvent.isFinish = true;
     }
+    if (getEvent.type == "upgrade" && !getEvent.isFinish) {
+      toggleModal(getEvent);
+      backpack.add(getEvent.itemId);
+      getEvent.isFinish = true;
+    }
     if (getEvent.type == "bad" && !getEvent.isFinish) {
-      trigger_alert_box(getEvent.name, 2000);
+      trigger_alert_box(getEvent.name, getEvent.timeout);
       getEvent.exec();
       getEvent.isFinish = true;
     }
@@ -231,7 +309,12 @@ async function moveRover(direction) {
   rover.element.style.left = rover.x + "0vh";
   statusUI.posX.innerHTML = `X : ${rover.x}`;
   statusUI.posY.innerHTML = `Y : ${rover.y}`;
-  if (rover.y > panelRes.height || rover.y < 0 || rover.x > panelRes.width || rover.x < 0) {
+  if (
+    rover.y > panelRes.height ||
+    rover.y < 0 ||
+    rover.x > panelRes.width ||
+    rover.x < 0
+  ) {
     trigger_gameover();
     return;
   }
@@ -343,6 +426,7 @@ async function sendCommands(commands = getCommands(), bypass = false) {
           trigger_gameover();
           return;
         }
+        //Win Condition Here plz
       }
     }, 1000 * commandMove);
     commandMove++;
@@ -351,30 +435,31 @@ async function sendCommands(commands = getCommands(), bypass = false) {
 
 let skip_game = () => {
   window.location.assign("./landing/index.html");
-}
+};
 
 let load_Inv = (open) => {
-  if(open){
+  if (open) {
     menu.mainmenu.classList.add("drawer_mainmenu");
     menu.inv.classList.remove("close_inv");
-    let mego = eventArray.filter(ele => ele.type === "good" && ele.isFinish);
-    mego.forEach(ele => {
+    let mego = eventArray.filter(
+      (ele) => (ele.type === "good" || ele.type === "upgrade") && ele.isFinish
+    );
+    mego.forEach((ele) => {
       let item = document.createElement("div");
       item.classList.add("inv_items");
       item.innerHTML = ele.name;
       item.onclick = () => {
-        toggleModal(ele)
+        toggleModal(ele);
       };
       menu.inv_panel.appendChild(item);
     });
-  }else{
+  } else {
     menu.mainmenu.classList.remove("drawer_mainmenu");
     menu.inv.classList.add("close_inv");
     menu.inv_panel.innerHTML = null;
   }
-}
-
+};
 
 let clearMoveset = () => {
   commandsPanel.innerHTML = null;
-}
+};

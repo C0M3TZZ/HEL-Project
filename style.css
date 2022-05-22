@@ -5,6 +5,10 @@ body {
     font-family: 'Mitr', sans-serif;
 }
 
+*{
+    user-select: none;
+}
+
 .container {
     /* Container */
     width: 100vw;
@@ -110,21 +114,47 @@ body {
     /* หุ่นยนต์ */
     width: 10vh;
     height: 10vh;
-    background-color: black;
     position: absolute;
     top: 0;
     left: 0;
     transition: all 1s;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rover img {
+    width: 180%;
+}
+
+.goodE{
+    background-color: #47a037;
+}
+
+.badE{
+    background-color: #a03747;
+}
+
+.halfE{
+    background-color: #a0a037;
+}
+
+.upE{
+    background-color: #4747a0;
+}
+
+.hideE{
+    background-color: #99662a;
 }
 
 .eventShadow{
     width: 10vh;
     height: 10vh;
-    background-color: #99662a;
     position: absolute;
     top: 0;
     left: 0;
+    transition: all 1s;
 }
 
 .toolbar {
@@ -156,6 +186,16 @@ body {
 
 .fontBiggerplz{
     font-size: 2rem;
+    transition: all 0.5s;
+}
+
+.fontBiggerplz:hover{
+    transform: scale(1.1);
+}
+
+.fontBiggerplz img{
+    width: 100%;
+    /* height: auto; */
 }
 
 .moveset {
@@ -171,17 +211,13 @@ body {
 
 .boxMoveset {
     height: 85%;
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     background-color: #c4c4c4;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
-}
-
-.boxMoveset img {
-    height: 100%;
 }
 
 .forward {
@@ -244,16 +280,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.headdir {
-    /* [DEV] ที่บอกทิศของหุ่น */
-    width: 5%;
-    height: 100%;
-    background-color: red;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .boxSend {
