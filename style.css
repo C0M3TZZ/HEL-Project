@@ -5,6 +5,10 @@ body {
     font-family: 'Mitr', sans-serif;
 }
 
+*{
+    user-select: none;
+}
+
 .container {
     /* Container */
     width: 100vw;
@@ -182,6 +186,11 @@ body {
 
 .fontBiggerplz{
     font-size: 2rem;
+    transition: all 0.5s;
+}
+
+.fontBiggerplz:hover{
+    transform: scale(1.1);
 }
 
 .fontBiggerplz img{
