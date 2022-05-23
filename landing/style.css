@@ -121,6 +121,10 @@ img#stars {
   mix-blend-mode: screen;
 }
 
+#earth {
+  margin-top: 50px;
+}
+
 .containerText {
   width: 100%;
   height: 100vh;
@@ -136,17 +140,16 @@ img#stars {
 
 #text {
   position: absolute;
-  font-size: 1200%;
+  font-size: 150px;
   font-weight: 900;
-  top:50px;
-
+  top: 100px;
   animation: text 3s infinite linear;
   animation-iteration-count: 1;
 }
 
 @keyframes text{
   from {top: -500px;}
-  to {top: 50px;}
+  to {top: 100px;}
 }
 
 .rocket {
@@ -652,7 +655,7 @@ img#stars {
   left: 10%;
 }
 
-.context{
+/* .context{
   position: absolute;
   top: 0;
   left: 145%;
@@ -760,10 +763,10 @@ img#stars {
 .t_l .area_tl:hover .context_tl{
   opacity: 1;
   visibility: visible;
-}
+} */
 
 /* ---------------------------- */
-.context_cl{
+/* .context_cl{
   position: absolute;
   bottom: 25%;
   left: 160%;
@@ -816,9 +819,9 @@ img#stars {
 .c_l :hover .context_cl{
   opacity: 1;
   visibility: visible;
-}
+} */
 /* ---------------------------- */
-.context_cr{
+/* .context_cr{
   position: absolute;
   bottom: 25%;
   right: 140%;
@@ -845,8 +848,8 @@ img#stars {
 }
 .area_cr:hover .context_cr h1::before{
   width: 30%;
-}
-
+} */
+/* 
 .context_cr h1::before{
   content: "";
   width: 0%;
@@ -871,9 +874,9 @@ img#stars {
 .c_r :hover .context_cr{
   opacity: 1;
   visibility: visible;
-}
+} */
 /* ---------------------------- */
-.context_head{
+/* .context_head{
   position: absolute;
   top:0%;
   left: 400%;
@@ -895,7 +898,7 @@ img#stars {
   position: absolute;
   bottom: 20%;
   z-index: 20;
-}
+} */
 
 /* ---------------------------- */
 
