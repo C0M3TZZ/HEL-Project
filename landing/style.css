@@ -140,7 +140,7 @@ img#stars {
 
 #text {
   position: absolute;
-  font-size: 150px;
+  font-size: 950%;
   font-weight: 900;
   top: 100px;
   animation: text 2s infinite linear;
@@ -150,7 +150,7 @@ img#stars {
 
 #shadowtext {
   position: absolute;
-  font-size: 150px;
+  font-size: 950%;
   font-weight: 900;
   top: 200px;
   opacity: 50%;
