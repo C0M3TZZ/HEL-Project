@@ -647,12 +647,20 @@ img#stars {
   z-index: 10;
 }
 
-.textstep6 {
+#textstep {
   width: 50vh;
   color: whitesmoke;
   position: absolute;
   top: 20%;
   left: 10%;
+}
+
+#textstep7 {
+  width: 50vh;
+  color: whitesmoke;
+  margin-top: 18%;
+  margin-left: 8%;
+  font-size: 120%;
 }
 
 /* .context{
