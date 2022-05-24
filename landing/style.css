@@ -142,17 +142,16 @@ img#stars {
   position: absolute;
   font-size: 950%;
   font-weight: 900;
-  top: 100px;
+  top: 14%;
   animation: text 2s infinite linear;
   animation-iteration-count: 1;
-  
 }
 
 #shadowtext {
   position: absolute;
   font-size: 950%;
   font-weight: 900;
-  top: 200px;
+  top: 28%;
   opacity: 50%;
   animation: shadowtext 2.5s infinite linear;
   animation-iteration-count: 1;
@@ -167,7 +166,7 @@ img#stars {
 
 @keyframes text{
   from {top: -500px;}
-  to {top: 100px;}
+  to {top: 14%;}
 }
 
 .rocket {
@@ -961,7 +960,7 @@ img#stars {
 }
 
 #textstep6 {
-  width: 50vh;
+  width: 53vh;
   color: whitesmoke;
   position: absolute;
   top: 15%;
@@ -1043,4 +1042,44 @@ img#stars {
   margin-top: 600px;
   opacity: 70%;
   position: absolute;
+}
+
+.head1 {
+  font-size: 40px;
+  color: whitesmoke;
+  margin-left: 6%;
+  margin-top: 180px;
+  position: absolute;
+}
+
+.head2 {
+  font-size: 60px;
+  color: whitesmoke;
+  margin-left: 69%;
+  margin-top: 70px;
+  position: absolute;
+}
+
+#textstep8 {
+  width: 50vh;
+  color: whitesmoke;
+  margin-top: 180px;
+  margin-left: 68%;
+  font-size: 20px;
+}
+
+.headstep9 {
+  font-size: 150px;
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 250px;
+  opacity: 50%;
+}
+
+.headstep9 {
+  font-size: 130px;
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 230px;
+  opacity: 30%;
 }
