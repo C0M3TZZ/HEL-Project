@@ -818,3 +818,21 @@ body {
 .tutor_panel img{
     width: 100%;
 }
+
+.close_mainmenu{
+    position: absolute;
+    background-color: white;
+    width: 10vh;
+    height: 10vh;
+    top: 3%;
+    right: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2.5vh;
+    cursor: pointer;
+
+}
+.close_mainmenu img{
+    width: 100%;
+}
