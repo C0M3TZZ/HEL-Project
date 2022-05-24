@@ -630,18 +630,18 @@ img#stars {
 #rotatehr3 {
   transform: rotate(200deg);
   position: absolute;
-  top: 73px;
-  left: 390px;
-  width: 420px;
+  top: 0px;
+  left: 0px;
+  width: 0px;
   z-index: 10;
 }
 
 #rotatehr4 {
   transform: rotate(210deg);
   position: absolute;
-  top: 40px;
-  left: 390px;
-  width: 154px;
+  top: 40vw;
+  left: 10vw;
+  width: 10vw;
   z-index: 10;
 }
 
