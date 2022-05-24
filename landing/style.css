@@ -607,7 +607,7 @@ img#stars {
 
 .textcl {
   position: absolute;
-  left: -600px;
+  right: 320px;
   top: 60%;
 }
 
@@ -633,7 +633,7 @@ img#stars {
   transform: rotate(200deg);
   position: absolute;
   top: 73px;
-  left: 390px;
+  left: 97%;
   width: 420px;
   z-index: 10;
 }
@@ -642,7 +642,7 @@ img#stars {
   transform: rotate(210deg);
   position: absolute;
   top: 40px;
-  left: 390px;
+  left: 97%;
   width: 154px;
   z-index: 10;
 }
