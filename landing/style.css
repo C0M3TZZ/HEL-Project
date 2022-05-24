@@ -981,7 +981,7 @@ img#stars {
   width: 65vh;
   color: whitesmoke;
   font-size: 20px;
-  margin-left: 950px;
+  margin-left: 60%;
   margin-top: 90px;
   opacity: 1;
 }
@@ -1021,7 +1021,7 @@ img#stars {
 .time1 {
   font-size: 110px;
   color: whitesmoke;
-  margin-left: 900px;
+  margin-left: 60%;
   margin-top: 600px;
   opacity: 70%;
   position: absolute;
@@ -1039,7 +1039,7 @@ img#stars {
 .time2 {
   font-size: 90px;
   color: whitesmoke;
-  margin-left: 1000px;
+  margin-left: 65%;
   margin-top: 600px;
   opacity: 70%;
   position: absolute;
