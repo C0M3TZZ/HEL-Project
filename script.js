@@ -85,7 +85,7 @@ let score = {
 };
 
 let enegry = {
-  value: 100,
+  value: (panelRes.height * panelRes.width) * 1.5,
   get: () => {
     return enegry.value;
   },
@@ -105,6 +105,7 @@ let enegry = {
   },
 };
 
+statusUI.energys.innerHTML = `Energy : ${enegry.get()}`;
 
 let backpack = {
   items: [],
@@ -274,6 +275,7 @@ let eventArray = [
     isFinish: false,
     score: 100,
     checkSpecial: null,
+    extraPoint: 100,
   },
   {
     name: "we Found a stone arrangement that look like giant frog",
@@ -293,7 +295,7 @@ let eventArray = [
     isFinish: false,
     score: 120,
     checkSpecial: "Robotic Arm",
-    extraPoint: "100",
+    extraPoint: 100,
   },
   {
     name: "we have discovered the soil of mars are suitable for plantation",
@@ -304,6 +306,7 @@ let eventArray = [
     isFinish: false,
     score: 200,
     checkSpecial: null,
+    extraPoint: 100,
   },
   {
     name: "You have discover weird surface of mars",
@@ -314,6 +317,7 @@ let eventArray = [
     isFinish: false,
     score: 130,
     checkSpecial: null,
+    extraPoint: 100,
   },
   {
     name: "The preserverance have fallen into mars crater",
